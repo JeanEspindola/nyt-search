@@ -7,11 +7,11 @@ import './index.css';
 import configureStore from './store/configureStore';
 import App from './components/App';
 import registerServiceWorker from './registerServiceWorker';
-//import { loadCartList } from './actions/cartListAction';
+// import { loadCartList } from './actions/cartListAction';
 
 const store = configureStore();
 
-//store.dispatch(loadCartList());
+// store.dispatch(loadCartList());
 
 ReactDOM.render(
   <Provider store={store}>
