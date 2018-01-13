@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Row, Col, Form, FormGroup, FormControl, InputGroup, Glyphicon } from 'react-bootstrap';
-// import './SearchInput.css';
+import { Form, FormGroup, FormControl, InputGroup, Glyphicon, ControlLabel } from 'react-bootstrap';
+import './SearchInput.css';
 
 const page = 0;
 
@@ -37,36 +37,24 @@ class SearchInput extends Component {
     const { query } = this.state;
 
     return (
-      <div className="">
-        <Row className="">
-          <Col xs={12}>
-            <span className="">
-                Type search query term in here:
-            </span>
-          </Col>
-        </Row>
-        <Row>
-          <Col xs={12}>
-            <Form inline className="" onSubmit={this.onSearch}>
-              <FormGroup controlId="formInlineEmail">
-                <InputGroup>
-                  <FormControl
-                    type="text"
-                    className=""
-                    placeholder="Search your terms here."
-                    value={query}
-                    onChange={this.onChangeQuery}
-                    name="query"
-                  />
-                  <InputGroup.Addon>
-                    <Glyphicon glyph="search" />
-                  </InputGroup.Addon>
-                </InputGroup>
-              </FormGroup>
-            </Form>
-          </Col>
-        </Row>
-      </div>
+      <Form className="Search-Form" onSubmit={this.onSearch}>
+        <FormGroup controlId="formInlineEmail">
+          <ControlLabel>Type search query term in here:</ControlLabel>
+          <InputGroup>
+            <FormControl
+              type="text"
+              className=""
+              placeholder="Search your terms here."
+              value={query}
+              onChange={this.onChangeQuery}
+              name="query"
+            />
+            <InputGroup.Addon>
+              <Glyphicon glyph="search" />
+            </InputGroup.Addon>
+          </InputGroup>
+        </FormGroup>
+      </Form>
     );
   }
 }

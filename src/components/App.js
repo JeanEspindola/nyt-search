@@ -4,9 +4,11 @@ import Header from './Header/Header';
 import SearchInput from './Search-Input/SearchInputContainer';
 
 const App = () => (
-  <div>
+  <div className="App">
     <Header />
-    <SearchInput />
+    <div className="App__Body">
+      <SearchInput />
+    </div>
   </div>
 );
 
