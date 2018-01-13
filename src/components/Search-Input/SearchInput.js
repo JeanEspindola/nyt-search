@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Row, Col, Form, FormGroup, FormControl, InputGroup, Glyphicon } from 'react-bootstrap';
-//import './SearchInput.css';
+// import './SearchInput.css';
 
 const page = 0;
 
@@ -14,13 +14,14 @@ class SearchInput extends Component {
     };
 
     this.onChangeQuery = this.onChangeQuery.bind(this);
+    this.onSearch = this.onSearch.bind(this);
   }
 
   onChangeQuery(e) {
     this.setState({ [e.target.name]: e.target.value });
   }
 
-  onSearch = (e) => {
+  onSearch(e) {
     e.preventDefault();
 
     const { query } = this.state;
@@ -30,13 +31,13 @@ class SearchInput extends Component {
     }
 
     this.props.onQuerySearch(query, page);
-    };
+  }
 
   render() {
     const { query } = this.state;
 
     return (
-      <div>
+      <div className="">
         <Row className="">
           <Col xs={12}>
             <span className="">
@@ -52,7 +53,7 @@ class SearchInput extends Component {
                   <FormControl
                     type="text"
                     className=""
-                    placeholder="Paste the url here."
+                    placeholder="Search your terms here."
                     value={query}
                     onChange={this.onChangeQuery}
                     name="query"
