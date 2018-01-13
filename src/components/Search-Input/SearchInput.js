@@ -38,12 +38,11 @@ class SearchInput extends Component {
 
     return (
       <Form className="Search-Form" onSubmit={this.onSearch}>
-        <FormGroup controlId="formInlineEmail">
+        <FormGroup>
           <ControlLabel>Type search query term in here:</ControlLabel>
           <InputGroup>
             <FormControl
               type="text"
-              className=""
               placeholder="Search your terms here."
               value={query}
               onChange={this.onChangeQuery}

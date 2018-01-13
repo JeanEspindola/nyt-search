@@ -11,7 +11,7 @@ class ArticleSearchService {
     return fetch(url)
       .then(response => response.json())
       .then(json => json.response.docs)
-      .catch(error => error)
+      .catch(error => error);
   }
 }
 
