@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home renders Home without crashing 1`] = `
+<div
+  className="Home"
+>
+  <Connect(SearchInput) />
+  <Connect(ArticleList) />
+</div>
+`;

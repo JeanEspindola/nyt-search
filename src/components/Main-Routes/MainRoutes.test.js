@@ -1,5 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import { shallowToJson } from 'enzyme-to-json';
+
 import MainRoutes from './MainRoutes';
 
 describe('MainRoutes', () => {
@@ -11,5 +13,6 @@ describe('MainRoutes', () => {
 
   it('renders MainRoutes without crashing', () => {
     expect(Component.length).toBeTruthy();
+    expect(shallowToJson(Component)).toMatchSnapshot();
   });
 });

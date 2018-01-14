@@ -13,6 +13,17 @@ class ArticleSearchService {
       .then(json => json.response.docs)
       .catch(error => error);
   }
+
+  static listAddKey(array) {
+    let id = 1;
+    for (let it = 0; it < array.length; it += 1) {
+      const item = array[it];
+      item.id = id;
+      id += 1;
+    }
+
+    return array;
+  }
 }
 
 export default ArticleSearchService;

@@ -29,7 +29,9 @@ class ArticleList extends Component {
         <ListGroup>
           {
             this.props.list.map(item => (
-              <ListGroupItem>
+              <ListGroupItem
+                key={item.id}
+              >
                 <Link to={{
                   pathname: '/detail',
                   article: item,
@@ -38,7 +40,7 @@ class ArticleList extends Component {
                   {item.headline.main}
                 </Link>
               </ListGroupItem>
-              ))
+            ))
           }
         </ListGroup>
         <Pager>
