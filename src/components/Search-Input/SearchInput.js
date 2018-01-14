@@ -29,7 +29,6 @@ class SearchInput extends Component {
     if (query === '') {
       return;
     }
-
     this.props.onQuerySearch(query, page);
   }
 
