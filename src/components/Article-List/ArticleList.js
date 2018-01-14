@@ -5,18 +5,14 @@ import PropTypes from 'prop-types';
 class ArticleList extends Component {
   constructor(props) {
     super(props);
-    this.getNextPage = this.getNextPage.bind(this);
-    this.getPreviousPage = this.getPreviousPage.bind(this);
+    this.getNewValues = this.getNewValues.bind(this);
   }
 
-  getNextPage(e) {
+  getNewValues(e) {
+    const index = e.target.name;
     e.preventDefault();
-    this.props.onQuerySearch(this.props.query, this.props.page + 1);
-  }
-
-  getPreviousPage(e) {
-    e.preventDefault();
-    this.props.onQuerySearch(this.props.query, this.props.page - 1);
+    const page = index === 'next' ? this.props.page + 1 : this.props.page - 1;
+    this.props.onQuerySearch(this.props.query, page);
   }
 
   render() {
@@ -36,11 +32,20 @@ class ArticleList extends Component {
           }
         </ListGroup>
         <Pager>
-          <Pager.Item disabled={this.props.page === 0} previous onClick={this.getPreviousPage}>
+          <Pager.Item
+            previous
+            disabled={this.props.page === 0}
+            onClick={this.getNewValues}
+            name="previous"
+          >
             <Glyphicon glyph="chevron-left" />
             Previous Page
           </Pager.Item>
-          <Pager.Item next onClick={this.getNextPage}>
+          <Pager.Item
+            next
+            onClick={this.getNewValues}
+            name="next"
+          >
             Next Page
             <Glyphicon glyph="chevron-right" />
           </Pager.Item>

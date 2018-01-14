@@ -6,6 +6,8 @@ describe('articleSearchAction', () => {
     const list = [{ article: 'a' }, { article: 'b' }, { article: 'c' }];
     const page = 1;
     const query = 'q';
-    expect(searchQuerySuccess(list, page, query)).toEqual({ type: SEARCH_SUBMIT_SUCCESS, list, page, query });
+    expect(searchQuerySuccess(list, page, query)).toEqual({
+      type: SEARCH_SUBMIT_SUCCESS, list, page, query,
+    });
   });
 });

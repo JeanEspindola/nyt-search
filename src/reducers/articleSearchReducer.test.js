@@ -26,7 +26,9 @@ describe('cartListReducer', () => {
 
   it('Reducer --> SEARCH_SUBMIT_SUCCESS', () => {
     state = initialState;
-    state = articleList(state, { type: SEARCH_SUBMIT_SUCCESS, list, page, query });
+    state = articleList(state, {
+      type: SEARCH_SUBMIT_SUCCESS, list, page, query,
+    });
     expect(state.list).toEqual(list);
     expect(state.page).toEqual(page);
     expect(state.query).toEqual(query);
@@ -36,17 +38,19 @@ describe('cartListReducer', () => {
     state = {
       list,
       page,
-      query
+      query,
     };
-    state = articleList(state, { type: '' });
-    expect(state).toEqual({list, page, query});
+    state = articleList(state, {
+      type: '',
+    });
+    expect(state).toEqual({ list, page, query });
   });
 
   it('Reducer --> return initial state', () => {
     state = {
       list,
       page,
-      query
+      query,
     };
     state = articleList(undefined, {});
     expect(state).toEqual(initialState);
