@@ -1,16 +1,18 @@
+/*
+* App
+*
+* Initialize the UI rendering the Header and the MainrRoutes where the rest of
+* application will be rendered based on the route.
+*
+* */
 import React from 'react';
-import './App.css';
 import Header from './Header/Header';
-import SearchInput from './Search-Input/SearchInputContainer';
-import ArticleList from './Article-List/ArticleListContainer';
+import MainRoutes from './Main-Routes/MainRoutes';
 
 const App = () => (
   <div className="App">
     <Header />
-    <div className="App__Body">
-      <SearchInput />
-      <ArticleList />
-    </div>
+    <MainRoutes />
   </div>
 );
 
