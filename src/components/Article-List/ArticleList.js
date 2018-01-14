@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { ListGroup, ListGroupItem, Pager, Glyphicon } from 'react-bootstrap';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 class ArticleList extends Component {
   constructor(props) {
@@ -27,8 +28,17 @@ class ArticleList extends Component {
         <h4>Results:</h4>
         <ListGroup>
           {
-            this.props.list.map(item =>
-              <ListGroupItem href="#link1">{item.headline.main}</ListGroupItem>)
+            this.props.list.map(item => (
+              <ListGroupItem>
+                <Link to={{
+                  pathname: '/detail',
+                  article: item,
+                }}
+                >
+                  {item.headline.main}
+                </Link>
+              </ListGroupItem>
+              ))
           }
         </ListGroup>
         <Pager>
