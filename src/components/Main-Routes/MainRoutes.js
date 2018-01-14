@@ -1,3 +1,9 @@
+/*
+* MainRoutes Presentation Component
+*
+* It provides the switch to display the configured routes components.
+*
+* */
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import Home from '../Home/Home';
