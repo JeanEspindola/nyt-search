@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ArticleDetail renders ArticleDetail without crashing 1`] = `
+<div
+  className="Detail"
+>
+  <Row
+    bsClass="row"
+    className="Detail__Return"
+    componentClass="div"
+  >
+    <Link
+      replace={false}
+      to="/"
+    >
+      <Glyphicon
+        bsClass="glyphicon"
+        glyph="chevron-left"
+      />
+      Go to Results Page
+    </Link>
+  </Row>
+  <Row
+    bsClass="row"
+    className="Detail__Title"
+    componentClass="div"
+  >
+    <h3>
+      test
+    </h3>
+  </Row>
+  <Row
+    bsClass="row"
+    className="Detail__Date"
+    componentClass="div"
+  >
+    14.01.2018
+  </Row>
+  <Row
+    bsClass="row"
+    className="Detail__Text"
+    componentClass="div"
+  >
+    test test test
+  </Row>
+  <Row
+    bsClass="row"
+    className="Detail__Link"
+    componentClass="div"
+  >
+    <a
+      href="www.test.com"
+      target="_blank"
+    >
+      Read the Full Article
+    </a>
+  </Row>
+</div>
+`;
