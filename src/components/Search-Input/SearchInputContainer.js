@@ -1,3 +1,10 @@
+/*
+* Search Input Container Component
+*
+* Connects the presentation component to redux.
+* It dispaches the loadSearchResults action.
+*
+* */
 import { connect } from 'react-redux';
 import { loadSearchResults } from '../../actions/articleSearchAction';
 import SearchInput from './SearchInput';

@@ -1,3 +1,10 @@
+/*
+* Article Detail Presentation Component
+*
+* Renders the detailed list. Using moment library to format dates.
+* Using Link to make sure to call parant route.
+*
+* */
 import React, { Component } from 'react';
 import { Row, Glyphicon } from 'react-bootstrap';
 import { Link } from 'react-router-dom';

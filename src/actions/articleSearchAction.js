@@ -1,3 +1,10 @@
+/*
+* Article Search Action:
+*
+* All actions taken from components in order to access/modify the store.
+* In this case there is single action, when searching query success.
+*
+* */
 import articleSearchService from '../utils/articleSearchService';
 import { SEARCH_SUBMIT_SUCCESS } from '../utils/constants';
 

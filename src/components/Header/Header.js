@@ -1,3 +1,9 @@
+/*
+* Header Presentation Component
+*
+* Displays the header top bar.
+*
+* */
 import React from 'react';
 import { Row } from 'react-bootstrap';
 import './Header.css';

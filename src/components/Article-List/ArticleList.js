@@ -1,3 +1,9 @@
+/*
+* Article List Presentation Component
+*
+* Renders the list of returned actions, performs page navigation on results.
+*
+* */
 import React, { Component } from 'react';
 import { ListGroup, ListGroupItem, Pager, Glyphicon } from 'react-bootstrap';
 import PropTypes from 'prop-types';

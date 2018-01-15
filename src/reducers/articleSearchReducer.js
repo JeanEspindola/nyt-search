@@ -1,3 +1,11 @@
+/*
+* Article Search Reducer:
+*
+* Performs transformations and return the values to the state based on actions dispatched.
+* There is basically one operation here, populating the list.
+* I didn't create others, but could have status for loading and submit field as well.
+*
+* */
 import { SEARCH_SUBMIT_SUCCESS } from '../utils/constants';
 import initialState from './initialState';
 import articleSearchService from '../utils/articleSearchService';

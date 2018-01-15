@@ -1,3 +1,9 @@
+/*
+* Search Input Presentation Component
+*
+* Displays the search input bar. The search action is in onSubmit action.
+*
+* */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Form, FormGroup, FormControl, InputGroup, Glyphicon, ControlLabel } from 'react-bootstrap';
