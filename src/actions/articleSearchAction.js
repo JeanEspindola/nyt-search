@@ -6,7 +6,14 @@
 *
 * */
 import articleSearchService from '../utils/articleSearchService';
-import { SEARCH_SUBMIT_SUCCESS } from '../utils/constants';
+import { SEARCH_SUBMIT_SUCCESS, LOADING_INDICATOR_SUCCESS } from '../utils/constants';
+
+export function loadingSubmit(loading) {
+  return {
+    type: LOADING_INDICATOR_SUCCESS,
+    loading,
+  };
+}
 
 export function searchQuerySuccess(list, page, query) {
   return {
@@ -18,9 +25,15 @@ export function searchQuerySuccess(list, page, query) {
 }
 
 export function loadSearchResults(query, page) {
-  return dispatch => articleSearchService.getSearchResults(query, page).then((articleList) => {
-    dispatch(searchQuerySuccess(articleList, page, query));
-  }).catch((error) => {
-    throw (error);
-  });
+  return (dispatch) => {
+    dispatch(loadingSubmit(true));
+
+    articleSearchService.getSearchResults(query, page).then((articleList) => {
+      dispatch(loadingSubmit(false));
+      dispatch(searchQuerySuccess(articleList, page, query));
+    }).catch((error) => {
+      dispatch(loadingSubmit(false));
+      throw (error);
+    });
+  };
 }

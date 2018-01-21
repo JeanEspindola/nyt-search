@@ -6,7 +6,7 @@
 * I didn't create others, but could have status for loading and submit field as well.
 *
 * */
-import { SEARCH_SUBMIT_SUCCESS } from '../utils/constants';
+import { SEARCH_SUBMIT_SUCCESS, LOADING_INDICATOR_SUCCESS } from '../utils/constants';
 import initialState from './initialState';
 import articleSearchService from '../utils/articleSearchService';
 
@@ -17,6 +17,11 @@ function articleList(state = initialState, action) {
       newState.list = articleSearchService.listAddKey(action.list);
       newState.page = action.page;
       newState.query = action.query;
+      return newState;
+    }
+    case LOADING_INDICATOR_SUCCESS: {
+      const newState = Object.assign([], state);
+      newState.loading = action.loading;
       return newState;
     }
     default:
