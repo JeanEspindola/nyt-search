@@ -7,17 +7,11 @@
 *
 * */
 import { connect } from 'react-redux';
-import { loadSearchResults } from '../../actions/articleSearchAction';
 import ArticleList from './ArticleList';
 
 const mapStateToProps = state => ({
   list: state.articleList.list,
-  page: state.articleList.page,
-  query: state.articleList.query,
+  loading: state.articleList.loading,
 });
 
-const mapDispatchToProps = dispatch => ({
-  onQuerySearch: (query, page) => dispatch(loadSearchResults(query, page)),
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(ArticleList);
+export default connect(mapStateToProps, null)(ArticleList);

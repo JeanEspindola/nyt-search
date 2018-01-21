@@ -9,8 +9,6 @@ import PropTypes from 'prop-types';
 import { Form, FormGroup, FormControl, InputGroup, Glyphicon, ControlLabel } from 'react-bootstrap';
 import './SearchInput.css';
 
-const page = 0;
-
 class SearchInput extends Component {
   constructor(props) {
     super(props);
@@ -35,7 +33,7 @@ class SearchInput extends Component {
     if (query === '') {
       return;
     }
-    this.props.onQuerySearch(query, page);
+    this.props.onQuerySearch(query, 0);
   }
 
   render() {

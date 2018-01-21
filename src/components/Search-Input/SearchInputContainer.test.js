@@ -13,11 +13,7 @@ describe('SearchInputContainer', () => {
   beforeEach(() => {
     const store = storeFake({});
 
-    const wrapper = mount(
-      <Provider store={store}>
-        <SearchInputContainer />
-      </Provider>
-    );
+    const wrapper = mount(<Provider store={store}><SearchInputContainer /></Provider>);
 
     Component = wrapper.find(SearchInputContainer);
     ChoiceComponent = Component.find(SearchInput);

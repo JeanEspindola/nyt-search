@@ -5,6 +5,6 @@ exports[`Home renders Home without crashing 1`] = `
   className="Home"
 >
   <Connect(SearchInput) />
-  <Connect(ArticleList) />
+  <Connect(LoadingHOC) />
 </div>
 `;

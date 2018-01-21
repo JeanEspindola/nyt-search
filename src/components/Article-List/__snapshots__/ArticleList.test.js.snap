@@ -1,87 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ArticleList renders ArticleList without crashing 1`] = `
-<div>
-  <h4>
-    Results:
-  </h4>
-  <ListGroup
-    bsClass="list-group"
-  >
-    <ListGroupItem
-      bsClass="list-group-item"
-      key="1"
-      listItem={false}
-    >
-      <Link
-        replace={false}
-        to={
-          Object {
-            "article": Object {
-              "headline": Object {
-                "main": "a",
-              },
-              "id": 1,
-            },
-            "pathname": "/detail",
-          }
-        }
-      >
-        a
-      </Link>
-    </ListGroupItem>
-    <ListGroupItem
-      bsClass="list-group-item"
-      key="2"
-      listItem={false}
-    >
-      <Link
-        replace={false}
-        to={
-          Object {
-            "article": Object {
-              "headline": Object {
-                "main": "a",
-              },
-              "id": 2,
-            },
-            "pathname": "/detail",
-          }
-        }
-      >
-        a
-      </Link>
-    </ListGroupItem>
-  </ListGroup>
-  <Pager
-    bsClass="pager"
-  >
-    <PagerItem
-      disabled={false}
-      name="previous"
-      next={false}
-      onClick={[Function]}
-      previous={true}
-    >
-      <Glyphicon
-        bsClass="glyphicon"
-        glyph="chevron-left"
-      />
-      Previous Page
-    </PagerItem>
-    <PagerItem
-      disabled={false}
-      name="next"
-      next={true}
-      onClick={[Function]}
-      previous={false}
-    >
-      Next Page
-      <Glyphicon
-        bsClass="glyphicon"
-        glyph="chevron-right"
-      />
-    </PagerItem>
-  </Pager>
-</div>
+<ArticleList
+  list={
+    Array [
+      Object {
+        "headline": Object {
+          "main": "a",
+        },
+        "id": 1,
+      },
+      Object {
+        "headline": Object {
+          "main": "a",
+        },
+        "id": 2,
+      },
+    ]
+  }
+  onQuerySearch={[Function]}
+  page={2}
+  query="search"
+/>
 `;
