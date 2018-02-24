@@ -12,18 +12,18 @@ import articleSearchService from '../utils/articleSearchService';
 
 function articleList(state = initialState, action) {
   switch (action.type) {
-    case SEARCH_SUBMIT_SUCCESS: {
-      const newState = Object.assign([], state);
-      newState.list = articleSearchService.listAddKey(action.list);
-      newState.page = action.page;
-      newState.query = action.query;
-      return newState;
-    }
-    case LOADING_INDICATOR_SUCCESS: {
-      const newState = Object.assign([], state);
-      newState.loading = action.loading;
-      return newState;
-    }
+    case SEARCH_SUBMIT_SUCCESS:
+      return {
+        ...state,
+        list: articleSearchService.listAddKey(action.list),
+        page: action.page,
+        query: action.query,
+      };
+    case LOADING_INDICATOR_SUCCESS:
+      return {
+        ...state,
+        loading: action.loading,
+      };
     default:
       return state;
   }
