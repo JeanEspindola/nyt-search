@@ -11,16 +11,17 @@ import { Link } from 'react-router-dom';
 import Moment from 'moment';
 import './ArticleDetail.css';
 
-let article;
-
 class ArticleDetail extends Component {
   constructor(props) {
     super(props);
-    article = this.props.location.article;
+    this.state = {
+      article: this.props.location.article,
+    };
     Moment.locale('de');
   }
 
   render() {
+    const { article } = this.state;
     if (article === undefined) {
       return <p>No details to show.</p>;
     }

@@ -2,6 +2,7 @@
 
 # generated styles
 /src/**/*.css
+*.snap
 
 # dependencies
 /node_modules

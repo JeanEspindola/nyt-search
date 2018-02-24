@@ -1,29 +1,26 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { shallowToJson } from 'enzyme-to-json';
-import ArticleList from './ArticleList';
+import PageNavigation from './PageNavigation';
 
 describe('ArticleList', () => {
+  const mockOnQuerySearch = jest.fn();
+  const page = 2;
+  const query = 'search';
   let list;
   let Component;
 
-  it('renders ArticleList without crashing', () => {
+  it('renders PageNavigation without crashing', () => {
     list = [{ id: 1, headline: { main: 'a' } }, { id: 2, headline: { main: 'a' } }];
 
-    Component = shallow(<ArticleList
+    Component = shallow(<PageNavigation
       list={list}
+      page={page}
+      query={query}
+      onQuerySearch={mockOnQuerySearch}
     />);
 
     expect(Component.length).toBeTruthy();
     expect(shallowToJson(Component)).toMatchSnapshot();
-  });
-
-  it('renders ArticleList with list empty', () => {
-    const text = 'There are no results to display.';
-    list = [];
-    Component = shallow(<ArticleList
-      list={list}
-    />);
-    expect(Component.find('p').text()).toBe(text);
   });
 });
