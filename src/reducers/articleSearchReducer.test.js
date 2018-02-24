@@ -1,15 +1,23 @@
 import articleList from './articleSearchReducer';
 import initialState from './initialState';
-import { SEARCH_SUBMIT_SUCCESS } from '../utils/constants';
+import { LOADING_INDICATOR_SUCCESS, SEARCH_SUBMIT_SUCCESS } from '../utils/constants';
 
 describe('cartListReducer', () => {
-  let list;
-  let page;
-  let query;
   let state;
+  let defaultState;
 
   beforeEach(() => {
-    list = [
+    state = initialState;
+    defaultState = {
+      page: 0,
+      query: '',
+      loading: false,
+      list: [],
+    };
+  });
+
+  it('Reducer --> SEARCH_SUBMIT_SUCCESS', () => {
+    const list = [
       {
         article: 'a', snippet: 'a',
       },
@@ -20,12 +28,8 @@ describe('cartListReducer', () => {
         article: 'c', snippet: 'c',
       },
     ];
-    page = 0;
-    query = 'search';
-  });
-
-  it('Reducer --> SEARCH_SUBMIT_SUCCESS', () => {
-    state = initialState;
+    const page = 3;
+    const query = 'test';
     state = articleList(state, {
       type: SEARCH_SUBMIT_SUCCESS, list, page, query,
     });
@@ -34,24 +38,21 @@ describe('cartListReducer', () => {
     expect(state.query).toEqual(query);
   });
 
-  it('Reducer --> DEFAULT', () => {
-    state = {
-      list,
-      page,
-      query,
-    };
+  it('Reducer --> LOADING_INDICATOR_SUCCESS', () => {
+    const loading = true;
     state = articleList(state, {
-      type: '',
+      type: LOADING_INDICATOR_SUCCESS, loading,
     });
-    expect(state).toEqual({ list, page, query });
+    expect(state.loading).toEqual(loading);
+  });
+
+  it('Reducer --> DEFAULT', () => {
+    state = initialState;
+    state = articleList(state, { type: '' });
+    expect(state).toEqual(defaultState);
   });
 
   it('Reducer --> return initial state', () => {
-    state = {
-      list,
-      page,
-      query,
-    };
     state = articleList(undefined, {});
     expect(state).toEqual(initialState);
   });
