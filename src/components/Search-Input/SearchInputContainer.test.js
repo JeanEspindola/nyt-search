@@ -1,26 +1,18 @@
 import React from 'react';
-import { Provider } from 'react-redux';
-import { mount } from 'enzyme';
-
-import { storeFake } from '../../mock/storeFake';
+import { createMockStore } from 'redux-test-utils';
+import shallowWithStore from '../../test/shallowWithStore';
 import SearchInputContainer from './SearchInputContainer';
-import SearchInput from './SearchInput';
 
 describe('SearchInputContainer', () => {
-  let Component;
-  let ChoiceComponent;
+  let ConnectedComponent;
 
   beforeEach(() => {
-    const store = storeFake({});
+    const store = createMockStore({});
 
-    const wrapper = mount(<Provider store={store}><SearchInputContainer /></Provider>);
-
-    Component = wrapper.find(SearchInputContainer);
-    ChoiceComponent = Component.find(SearchInput);
+    ConnectedComponent = shallowWithStore(<SearchInputContainer />, store);
   });
 
   it('renders SearchInput connected container', () => {
-    expect(Component.length).toBeTruthy();
-    expect(ChoiceComponent.length).toBeTruthy();
+    expect(ConnectedComponent.length).toBeTruthy();
   });
 });
