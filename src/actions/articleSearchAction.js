@@ -8,21 +8,21 @@
 import articleSearchService from '../utils/articleSearchService';
 import { SEARCH_SUBMIT_SUCCESS, LOADING_INDICATOR_SUCCESS } from '../utils/constants';
 
-export function loadingSubmit(loading) {
+export const loadingSubmit = loading => {
   return {
     type: LOADING_INDICATOR_SUCCESS,
     loading,
   };
-}
+};
 
-export function searchQuerySuccess(list, page, query) {
+export const searchQuerySuccess = (list, page, query) => {
   return {
     type: SEARCH_SUBMIT_SUCCESS,
     list,
     page,
     query,
   };
-}
+};
 
 export function loadSearchResults(query, page) {
   return (dispatch) => {
