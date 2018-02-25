@@ -10,7 +10,7 @@ describe('ArticleList', () => {
   let list;
   let Component;
 
-  it('renders PageNavigation without crashing', () => {
+  beforeEach(() => {
     list = [{ id: 1, headline: { main: 'a' } }, { id: 2, headline: { main: 'a' } }];
 
     Component = shallow(<PageNavigation
@@ -19,8 +19,34 @@ describe('ArticleList', () => {
       query={query}
       onQuerySearch={mockOnQuerySearch}
     />);
+  });
 
+  it('renders PageNavigation without crashing', () => {
     expect(Component.length).toBeTruthy();
     expect(shallowToJson(Component)).toMatchSnapshot();
+  });
+
+  it('should call getNewValues and call onQuerySearch -- next', () => {
+    const func = () => {};
+    const event = {
+      preventDefault: func,
+      target: {
+        name: 'next',
+      },
+    };
+    Component.instance().getNewValues(event);
+    expect(mockOnQuerySearch).toHaveBeenCalledWith('search', 3);
+  });
+
+  it('should call getNewValues and call onQuerySearch -- next', () => {
+    const func = () => {};
+    const event = {
+      preventDefault: func,
+      target: {
+        name: 'previous',
+      },
+    };
+    Component.instance().getNewValues(event);
+    expect(mockOnQuerySearch).toHaveBeenCalledWith('search', 1);
   });
 });

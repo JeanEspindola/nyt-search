@@ -10,6 +10,7 @@
       "!<rootDir>/node_modules/",
       "!<rootDir>/path/to/dir/",
       "!src/setupTests.js",
+      "!src/test/*.*",
       "!src/registerServiceWorker.js",
       "!src/index.js"
     ]

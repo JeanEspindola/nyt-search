@@ -16,15 +16,6 @@ Object {
 }
 `;
 
-exports[`articleSearchAction should handle loadSearchResults action - error 1`] = `
-Array [
-  Object {
-    "loading": true,
-    "type": "LOADING_INDICATOR_SUCCESS",
-  },
-]
-`;
-
 exports[`articleSearchAction should handle loadSearchResults action - success 1`] = `
 Array [
   Object {
