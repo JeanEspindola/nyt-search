@@ -8,32 +8,26 @@
 import articleSearchService from '../utils/articleSearchService';
 import { SEARCH_SUBMIT_SUCCESS, LOADING_INDICATOR_SUCCESS } from '../utils/constants';
 
-export const loadingSubmit = loading => {
-  return {
-    type: LOADING_INDICATOR_SUCCESS,
-    loading,
-  };
+export const loadingSubmit = loading => ({
+  type: LOADING_INDICATOR_SUCCESS,
+  loading,
+});
+
+export const searchQuerySuccess = (list, page, query) => ({
+  type: SEARCH_SUBMIT_SUCCESS,
+  list,
+  page,
+  query,
+});
+
+export const loadSearchResults = (query, page) => async (dispatch) => {
+  dispatch(loadingSubmit(true));
+
+  articleSearchService.getSearchResults(query, page).then((articleList) => {
+    dispatch(loadingSubmit(false));
+    dispatch(searchQuerySuccess(articleList, page, query));
+  }).catch((error) => {
+    dispatch(loadingSubmit(false));
+    throw (error);
+  });
 };
-
-export const searchQuerySuccess = (list, page, query) => {
-  return {
-    type: SEARCH_SUBMIT_SUCCESS,
-    list,
-    page,
-    query,
-  };
-};
-
-export function loadSearchResults(query, page) {
-  return (dispatch) => {
-    dispatch(loadingSubmit(true));
-
-    articleSearchService.getSearchResults(query, page).then((articleList) => {
-      dispatch(loadingSubmit(false));
-      dispatch(searchQuerySuccess(articleList, page, query));
-    }).catch((error) => {
-      dispatch(loadingSubmit(false));
-      throw (error);
-    });
-  };
-}
