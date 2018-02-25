@@ -18,8 +18,5 @@ exports[`ArticleList renders ArticleList without crashing 1`] = `
       },
     ]
   }
-  onQuerySearch={[Function]}
-  page={2}
-  query="search"
 />
 `;

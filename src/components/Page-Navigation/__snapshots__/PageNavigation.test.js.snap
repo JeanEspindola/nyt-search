@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ArticleList renders PageNavigation without crashing 1`] = `
+<Pager
+  bsClass="pager"
+>
+  <PagerItem
+    disabled={false}
+    name="previous"
+    next={false}
+    onClick={[Function]}
+    previous={true}
+  >
+    <Glyphicon
+      bsClass="glyphicon"
+      glyph="chevron-left"
+    />
+    Previous Page
+  </PagerItem>
+  <PagerItem
+    disabled={false}
+    name="next"
+    next={true}
+    onClick={[Function]}
+    previous={false}
+  >
+    Next Page
+    <Glyphicon
+      bsClass="glyphicon"
+      glyph="chevron-right"
+    />
+  </PagerItem>
+</Pager>
+`;

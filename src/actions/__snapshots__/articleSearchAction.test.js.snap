@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`articleSearchAction creates a LOADING_INDICATOR_SUCCESS action 1`] = `
+Object {
+  "list": Array [],
+  "page": 1,
+  "query": true,
+  "type": "SEARCH_SUBMIT_SUCCESS",
+}
+`;
+
+exports[`articleSearchAction creates a SEARCH_SUBMIT_SUCCESS action 1`] = `
+Object {
+  "loading": false,
+  "type": "LOADING_INDICATOR_SUCCESS",
+}
+`;
+
+exports[`articleSearchAction should handle loadSearchResults action - error 1`] = `
+Array [
+  Object {
+    "loading": true,
+    "type": "LOADING_INDICATOR_SUCCESS",
+  },
+]
+`;
+
+exports[`articleSearchAction should handle loadSearchResults action - success 1`] = `
+Array [
+  Object {
+    "loading": true,
+    "type": "LOADING_INDICATOR_SUCCESS",
+  },
+]
+`;
