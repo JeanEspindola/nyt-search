@@ -1,4 +1,5 @@
 import articleSearchService from './articleSearchService';
+import articleMockedData from '../mock/articleMockedData.json';
 
 describe('articleSearchService', () => {
   const list = [
@@ -9,7 +10,7 @@ describe('articleSearchService', () => {
 
   const responseObj = {
     response: {
-      docs: list,
+      docs: articleMockedData.responseList,
     },
   };
 
@@ -25,9 +26,9 @@ describe('articleSearchService', () => {
     }));
   });
 
-  it('test api call mocking function', async () => {
+  it('mock api call mocking function', async () => {
     const response = await articleSearchService.getSearchResults('search', 1);
-    expect(response).toBe(list);
+    expect(response).toBe(articleMockedData.responseList);
   });
 
   it('add id to each element of the list', () => {
