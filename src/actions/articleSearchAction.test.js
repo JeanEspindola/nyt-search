@@ -2,6 +2,7 @@ import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import { SEARCH_SUBMIT_SUCCESS, LOADING_INDICATOR_SUCCESS } from '../utils/constants';
 import { searchQuerySuccess, loadingSubmit, loadSearchResults } from './articleSearchAction';
+import articleMockedData from '../mock/articleMockedData.json';
 
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
@@ -31,17 +32,8 @@ describe('articleSearchAction', () => {
   });
 
   it('should handle loadSearchResults action - success', async () => {
-    const response = [
-      {
-        article: 'a', snippet: 'a',
-      },
-      {
-        article: 'b', snippet: 'b',
-      },
-      {
-        article: 'c', snippet: 'c',
-      },
-    ];
+    const response = articleMockedData.responseList;
+
     fetch.mockResponseSuccess(response);
     await store.dispatch(loadSearchResults('test', 1));
     expect(store.getActions()).toMatchSnapshot();
