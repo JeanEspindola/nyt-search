@@ -23,11 +23,12 @@ export const searchQuerySuccess = (list, page, query) => ({
 export const loadSearchResults = (query, page) => async (dispatch) => {
   dispatch(loadingSubmit(true));
 
-  articleSearchService.getSearchResults(query, page).then((articleList) => {
+  try {
+    const articleList = await articleSearchService.getSearchResults(query, page);
     dispatch(loadingSubmit(false));
     dispatch(searchQuerySuccess(articleList, page, query));
-  }).catch((error) => {
+  } catch (error) {
     dispatch(loadingSubmit(false));
     throw (error);
-  });
+  }
 };

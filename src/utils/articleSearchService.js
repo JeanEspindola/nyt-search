@@ -13,7 +13,7 @@ class ArticleSearchService {
   /*
   * Here I'm using fetchAPI to make http requests.
   * */
-  static getSearchResults(query, page) {
+  static async getSearchResults(query, page) {
     const queryParams = `&q=${query}&page=${page}&fq=${FILTER_QUERY}&fl=${RESPONSE_FIELDS}`;
     const url = `${baseUrl}${queryParams}`;
 
