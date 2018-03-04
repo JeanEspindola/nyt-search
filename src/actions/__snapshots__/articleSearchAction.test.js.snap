@@ -22,5 +22,15 @@ Array [
     "loading": true,
     "type": "LOADING_INDICATOR_SUCCESS",
   },
+  Object {
+    "loading": false,
+    "type": "LOADING_INDICATOR_SUCCESS",
+  },
+  Object {
+    "list": [SyntaxError: Unexpected token o in JSON at position 1],
+    "page": 1,
+    "query": "test",
+    "type": "SEARCH_SUBMIT_SUCCESS",
+  },
 ]
 `;
