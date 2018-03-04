@@ -1,6 +1,6 @@
 import React from 'react';
 import { createMockStore } from 'redux-test-utils';
-import shallowWithStore from '../../test/shallowWithStore';
+import shallowWithStore from '../../mock/shallowWithStore';
 import SearchInputContainer from './SearchInputContainer';
 
 describe('SearchInputContainer', () => {
