@@ -8,8 +8,10 @@ import React from 'react';
 import { ListGroup, ListGroupItem } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import { compose } from 'recompose';
 import PageNavigation from '../Page-Navigation/PageNavigationContainer';
-import LoaderHOC from '../HOC/LoadingHOC';
+import WithLoading from '../HOC/WithLoading';
+import WithCondition from '../HOC/WithCondition';
 
 const ArticleList = ({ list }) => (
   <div>
@@ -39,4 +41,9 @@ ArticleList.propTypes = {
   list: PropTypes.arrayOf(PropTypes.any).isRequired,
 };
 
-export default LoaderHOC('list', 'loading')(ArticleList);
+const WithConditionalRendering = compose(
+  WithLoading('loading'),
+  WithCondition('list'),
+);
+
+export default WithConditionalRendering(ArticleList);
