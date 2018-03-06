@@ -28,6 +28,7 @@ describe('articleSearchService', () => {
   });
 
   it('add id to each element of the list', () => {
-    expect(articleSearchService.listAddKey(list.response.docs)).toEqual(articleMockedData.formattedList);
+    expect(articleSearchService.listAddKey(list.response.docs))
+      .toEqual(articleMockedData.formattedList);
   });
 });
