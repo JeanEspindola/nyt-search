@@ -17,13 +17,4 @@ describe('ArticleList', () => {
     expect(Component.length).toBeTruthy();
     expect(shallowToJson(Component)).toMatchSnapshot();
   });
-
-  it('renders ArticleList with list empty', () => {
-    const text = 'There are no results to display.';
-    list = [];
-    Component = shallow(<ArticleList
-      list={list}
-    />);
-    expect(Component.find('p').text()).toBe(text);
-  });
 });

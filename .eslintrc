@@ -10,5 +10,6 @@
       "components": [ "Link" ],
       "specialLink": [ "to" ]
     }]
-  }
+  },
+  "parser": "babel-eslint"
 }

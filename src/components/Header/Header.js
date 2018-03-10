@@ -5,15 +5,21 @@
 *
 * */
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Row } from 'react-bootstrap';
+import WithLocale from '../HOC/WithLocale';
 import './Header.css';
 
-const Header = () => (
+const Header = ({ locale }) => (
   <Row className="Header">
     <div className="Header__Title">
-      {'"The New York Times"'} article search application
+      {locale.header_title}
     </div>
   </Row>
 );
 
-export default Header;
+Header.propTypes = {
+  locale: PropTypes.object,
+};
+
+export default WithLocale(Header);

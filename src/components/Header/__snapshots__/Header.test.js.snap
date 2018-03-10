@@ -1,16 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Header renders Header without crashing 1`] = `
-<Row
-  bsClass="row"
-  className="Header"
-  componentClass="div"
->
-  <div
-    className="Header__Title"
-  >
-    "The New York Times"
-     article search application
-  </div>
-</Row>
-`;
+exports[`Header renders Header without crashing 1`] = `<Header />`;
