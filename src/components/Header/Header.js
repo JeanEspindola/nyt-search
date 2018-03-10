@@ -19,7 +19,7 @@ const Header = ({ locale }) => (
 );
 
 Header.propTypes = {
-  locale: PropTypes.object,
+  locale: PropTypes.objectOf(PropTypes.any).isRequired,
 };
 
 export default WithLocale(Header);

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-const WithLocale = (WrappedComponent) => {
-  return class WithLocaleHOC extends Component {
+const WithLocale = WrappedComponent =>
+  class WithLocaleHOC extends Component {
     static contextTypes = {
       locale: PropTypes.object,
     };
@@ -12,6 +12,5 @@ const WithLocale = (WrappedComponent) => {
       return <WrappedComponent {...this.props} locale={locale} />;
     }
   };
-};
 
 export default WithLocale;
