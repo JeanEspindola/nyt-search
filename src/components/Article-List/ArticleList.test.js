@@ -10,9 +10,11 @@ describe('ArticleList', () => {
   it('renders ArticleList without crashing', () => {
     list = [{ id: 1, headline: { main: 'a' } }, { id: 2, headline: { main: 'a' } }];
 
-    Component = shallow(<ArticleList
-      list={list}
-    />);
+    Component = shallow(<ArticleList list={list} />)
+      .first()
+      .shallow()
+      .find('ArticleList')
+      .shallow();
 
     expect(Component.length).toBeTruthy();
     expect(shallowToJson(Component)).toMatchSnapshot();

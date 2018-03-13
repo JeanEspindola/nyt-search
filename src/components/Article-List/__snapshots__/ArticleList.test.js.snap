@@ -1,22 +1,58 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ArticleList renders ArticleList without crashing 1`] = `
-<Component
-  list={
-    Array [
-      Object {
-        "headline": Object {
-          "main": "a",
-        },
-        "id": 1,
-      },
-      Object {
-        "headline": Object {
-          "main": "a",
-        },
-        "id": 2,
-      },
-    ]
-  }
-/>
+<div>
+  <h4>
+    Results:
+  </h4>
+  <ListGroup
+    bsClass="list-group"
+  >
+    <ListGroupItem
+      bsClass="list-group-item"
+      key="1"
+      listItem={false}
+    >
+      <Link
+        replace={false}
+        to={
+          Object {
+            "article": Object {
+              "headline": Object {
+                "main": "a",
+              },
+              "id": 1,
+            },
+            "pathname": "/detail",
+          }
+        }
+      >
+        a
+      </Link>
+    </ListGroupItem>
+    <ListGroupItem
+      bsClass="list-group-item"
+      key="2"
+      listItem={false}
+    >
+      <Link
+        replace={false}
+        to={
+          Object {
+            "article": Object {
+              "headline": Object {
+                "main": "a",
+              },
+              "id": 2,
+            },
+            "pathname": "/detail",
+          }
+        }
+      >
+        a
+      </Link>
+    </ListGroupItem>
+  </ListGroup>
+  <Connect(PageNavigation) />
+</div>
 `;
