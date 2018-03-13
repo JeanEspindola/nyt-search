@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`WithCondition renders WithCondition when isLoading false - without crashing 1`] = `
+<Component
+  list={
+    Array [
+      Object {
+        "test": "value",
+      },
+    ]
+  }
+/>
+`;
+
+exports[`WithCondition renders WithCondition when isLoading true - without crashing 1`] = `
+<p>
+  There are no results to display.
+</p>
+`;
+
+exports[`WithCondition renders WithCondition when list is invalid - without crashing 1`] = `
+<p>
+  There are no results to display.
+</p>
+`;
+
+exports[`WithCondition renders WithCondition when list is valid - without crashing 1`] = `
+<Component
+  list={
+    Array [
+      Object {
+        "test": "value",
+      },
+    ]
+  }
+/>
+`;
