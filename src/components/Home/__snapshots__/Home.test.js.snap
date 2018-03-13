@@ -1,10 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Home renders Home without crashing 1`] = `
-<div
-  className="Home"
->
+<React.Fragment>
   <Connect(SearchInput) />
   <Connect(Component) />
-</div>
+</React.Fragment>
 `;

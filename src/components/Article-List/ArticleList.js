@@ -4,7 +4,7 @@
 * Renders the list of returned actions, performs page navigation on results.
 *
 * */
-import React from 'react';
+import React, { Fragment } from 'react';
 import { ListGroup, ListGroupItem } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
@@ -14,7 +14,7 @@ import WithLoading from '../HOC/WithLoading';
 import WithCondition from '../HOC/WithCondition';
 
 const ArticleList = ({ list }) => (
-  <div>
+  <Fragment>
     <h4>Results:</h4>
     <ListGroup>
       {
@@ -34,7 +34,7 @@ const ArticleList = ({ list }) => (
       }
     </ListGroup>
     <PageNavigation />
-  </div>
+  </Fragment>
 );
 
 ArticleList.propTypes = {

@@ -5,7 +5,7 @@
 * application will be rendered based on the route.
 *
 * */
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import Header from './Header/Header';
 import MainRoutes from './Main-Routes/MainRoutes';
@@ -27,10 +27,10 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <Fragment>
         <Header />
         <MainRoutes />
-      </div>
+      </Fragment>
     );
   }
 }

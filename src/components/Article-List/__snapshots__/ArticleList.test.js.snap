@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ArticleList renders ArticleList without crashing 1`] = `
-<div>
+<React.Fragment>
   <h4>
     Results:
   </h4>
@@ -54,5 +54,5 @@ exports[`ArticleList renders ArticleList without crashing 1`] = `
     </ListGroupItem>
   </ListGroup>
   <Connect(PageNavigation) />
-</div>
+</React.Fragment>
 `;

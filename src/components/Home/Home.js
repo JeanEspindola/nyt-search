@@ -4,15 +4,15 @@
 * Displays the basic components for searching and list of articles.
 *
 * */
-import React from 'react';
+import React, { Fragment } from 'react';
 import SearchInput from '../Search-Input/SearchInputContainer';
 import ArticleList from '../Article-List/ArticleListContainer';
 
 const Home = () => (
-  <div className="Home">
+  <Fragment>
     <SearchInput />
     <ArticleList />
-  </div>
+  </Fragment>
 );
 
 export default Home;
