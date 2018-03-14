@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ArticleList renders PageNavigation without crashing 1`] = `
+exports[`PageNavigation renders PageNavigation without crashing 1`] = `
 <Pager
   bsClass="pager"
 >

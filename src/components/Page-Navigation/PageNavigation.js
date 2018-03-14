@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Pager, Glyphicon } from 'react-bootstrap';
 import PropTypes from 'prop-types';
+import WithLocale from '../HOC/WithLocale';
 
 class PageNavigation extends Component {
   constructor(props) {
@@ -25,14 +26,14 @@ class PageNavigation extends Component {
           name="previous"
         >
           <Glyphicon glyph="chevron-left" />
-          Previous Page
+          {this.props.locale.previous_page}
         </Pager.Item>
         <Pager.Item
           next
           onClick={this.getNewValues}
           name="next"
         >
-          Next Page
+          {this.props.locale.next_page}
           <Glyphicon glyph="chevron-right" />
         </Pager.Item>
       </Pager>
@@ -44,6 +45,7 @@ PageNavigation.propTypes = {
   page: PropTypes.number.isRequired,
   query: PropTypes.string.isRequired,
   onQuerySearch: PropTypes.func.isRequired,
+  locale: PropTypes.objectOf(PropTypes.any).isRequired,
 };
 
-export default PageNavigation;
+export default WithLocale(PageNavigation);

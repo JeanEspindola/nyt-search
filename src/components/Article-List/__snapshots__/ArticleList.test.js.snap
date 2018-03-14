@@ -53,6 +53,6 @@ exports[`ArticleList renders ArticleList without crashing 1`] = `
       </Link>
     </ListGroupItem>
   </ListGroup>
-  <Connect(PageNavigation) />
+  <Connect(connectContext) />
 </React.Fragment>
 `;

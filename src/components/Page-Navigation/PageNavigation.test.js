@@ -2,9 +2,11 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { shallowToJson } from 'enzyme-to-json';
 import PageNavigation from './PageNavigation';
+import en from '../../locales/en.json';
 
-describe('ArticleList', () => {
+describe('PageNavigation', () => {
   const mockOnQuerySearch = jest.fn();
+  const func = () => {};
   const page = 2;
   const query = 'search';
   let list;
@@ -13,12 +15,16 @@ describe('ArticleList', () => {
   beforeEach(() => {
     list = [{ id: 1, headline: { main: 'a' } }, { id: 2, headline: { main: 'a' } }];
 
-    Component = shallow(<PageNavigation
-      list={list}
-      page={page}
-      query={query}
-      onQuerySearch={mockOnQuerySearch}
-    />);
+    Component = shallow(
+      <PageNavigation
+        list={list}
+        page={page}
+        query={query}
+        onQuerySearch={mockOnQuerySearch}
+      />,
+      { context: { locale: en } },
+    ).find('PageNavigation')
+      .shallow();
   });
 
   it('renders PageNavigation without crashing', () => {
@@ -27,7 +33,6 @@ describe('ArticleList', () => {
   });
 
   it('should call getNewValues and call onQuerySearch -- next', () => {
-    const func = () => {};
     const event = {
       preventDefault: func,
       target: {
@@ -39,7 +44,6 @@ describe('ArticleList', () => {
   });
 
   it('should call getNewValues and call onQuerySearch -- next', () => {
-    const func = () => {};
     const event = {
       preventDefault: func,
       target: {
