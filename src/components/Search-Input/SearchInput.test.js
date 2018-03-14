@@ -12,8 +12,7 @@ describe('SearchInput', () => {
 
   beforeEach(() => {
     Component = shallow(
-      <SearchInput onQuerySearch={mockOnQuerySearch}
-      />,
+      <SearchInput onQuerySearch={mockOnQuerySearch} />,
       { context: { locale: en } },
     ).find('SearchInput')
       .shallow();

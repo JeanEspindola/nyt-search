@@ -9,9 +9,9 @@ import React, { Component } from 'react';
 import { Row, Glyphicon } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import Moment from 'moment';
+import PropTypes from 'prop-types';
 import './ArticleDetail.css';
-import WithLocale from "../HOC/WithLocale";
-import PropTypes from "prop-types";
+import WithLocale from '../HOC/WithLocale';
 
 class ArticleDetail extends Component {
   constructor(props) {
@@ -57,6 +57,7 @@ class ArticleDetail extends Component {
 
 ArticleDetail.propTypes = {
   locale: PropTypes.objectOf(PropTypes.any).isRequired,
+  location: PropTypes.objectOf(PropTypes.any).isRequired,
 };
 
 export default WithLocale(ArticleDetail);

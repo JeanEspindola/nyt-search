@@ -2,6 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { shallowToJson } from 'enzyme-to-json';
 import ArticleDetail from './ArticleDetail';
+import en from '../../locales/en.json';
 
 describe('ArticleDetail', () => {
   let Component;
@@ -19,7 +20,11 @@ describe('ArticleDetail', () => {
     location = {
       article,
     };
-    Component = shallow(<ArticleDetail location={location} />);
+    Component = shallow(
+      <ArticleDetail location={location} />,
+      { context: { locale: en } },
+    ).find('ArticleDetail')
+      .shallow();
     expect(Component.length).toBeTruthy();
     expect(shallowToJson(Component)).toMatchSnapshot();
   });
@@ -30,7 +35,11 @@ describe('ArticleDetail', () => {
       article: undefined,
     };
 
-    Component = shallow(<ArticleDetail location={location} />);
+    Component = shallow(
+      <ArticleDetail location={location} />,
+      { context: { locale: en } },
+    ).find('ArticleDetail')
+      .shallow();
     expect(Component.find('p').text()).toBe(text);
   });
 });
