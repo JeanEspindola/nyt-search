@@ -2,14 +2,21 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { shallowToJson } from 'enzyme-to-json';
 import SearchInput from './SearchInput';
+import en from '../../locales/en.json';
 
 describe('SearchInput', () => {
   const mockOnQuerySearch = jest.fn();
+  const func = () => {};
 
   let Component;
 
   beforeEach(() => {
-    Component = shallow(<SearchInput onQuerySearch={mockOnQuerySearch} />);
+    Component = shallow(
+      <SearchInput onQuerySearch={mockOnQuerySearch}
+      />,
+      { context: { locale: en } },
+    ).find('SearchInput')
+      .shallow();
   });
 
   it('renders SearchInput without crashing', () => {
@@ -18,7 +25,6 @@ describe('SearchInput', () => {
   });
 
   it('should call onSearch and not call onQuerySearch when query field is empty', () => {
-    const func = () => {};
     const event = {
       preventDefault: func,
     };
@@ -28,7 +34,6 @@ describe('SearchInput', () => {
   });
 
   it('should call onSearch and call onQuerySearch when query field has value', () => {
-    const func = () => {};
     const event = {
       preventDefault: func,
     };

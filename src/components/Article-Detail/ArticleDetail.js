@@ -10,6 +10,8 @@ import { Row, Glyphicon } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import Moment from 'moment';
 import './ArticleDetail.css';
+import WithLocale from "../HOC/WithLocale";
+import PropTypes from "prop-types";
 
 class ArticleDetail extends Component {
   constructor(props) {
@@ -23,7 +25,7 @@ class ArticleDetail extends Component {
   render() {
     const { article } = this.state;
     if (article === undefined) {
-      return <p>No details to show.</p>;
+      return <p>{this.props.locale.no_details}</p>;
     }
 
     return (
@@ -31,7 +33,7 @@ class ArticleDetail extends Component {
         <Row className="Detail__Return">
           <Link to="/" >
             <Glyphicon glyph="chevron-left" />
-            Go to Results Page
+            {this.props.locale.go_to_results}
           </Link>
         </Row>
         <Row className="Detail__Title">
@@ -45,7 +47,7 @@ class ArticleDetail extends Component {
         </Row>
         <Row className="Detail__Link">
           <a target="_blank" href={article.web_url}>
-            Read the Full Article
+            {this.props.locale.read_article}
           </a>
         </Row>
       </div>
@@ -53,4 +55,9 @@ class ArticleDetail extends Component {
   }
 }
 
-export default ArticleDetail;
+ArticleDetail.propTypes = {
+  locale: PropTypes.objectOf(PropTypes.any).isRequired,
+};
+
+export default WithLocale(ArticleDetail);
+

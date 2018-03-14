@@ -2,7 +2,7 @@
 
 exports[`Home renders Home without crashing 1`] = `
 <React.Fragment>
-  <Connect(SearchInput) />
+  <Connect(connectContext) />
   <Connect(Component) />
 </React.Fragment>
 `;

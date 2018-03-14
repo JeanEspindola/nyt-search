@@ -7,6 +7,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Form, FormGroup, FormControl, InputGroup, Glyphicon, ControlLabel } from 'react-bootstrap';
+import WithLocale from '../HOC/WithLocale';
 import './SearchInput.css';
 
 class SearchInput extends Component {
@@ -42,11 +43,11 @@ class SearchInput extends Component {
     return (
       <Form className="Search-Form" onSubmit={this.onSearch}>
         <FormGroup>
-          <ControlLabel>Type search query term in here:</ControlLabel>
+          <ControlLabel>{this.props.locale.type_query}</ControlLabel>
           <InputGroup>
             <FormControl
               type="text"
-              placeholder="Search your terms here."
+              placeholder={this.props.locale.search_terms}
               value={query}
               onChange={this.onChangeQuery}
               name="query"
@@ -63,6 +64,7 @@ class SearchInput extends Component {
 
 SearchInput.propTypes = {
   onQuerySearch: PropTypes.func.isRequired,
+  locale: PropTypes.objectOf(PropTypes.any).isRequired,
 };
 
-export default SearchInput;
+export default WithLocale(SearchInput);
