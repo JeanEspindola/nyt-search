@@ -10,7 +10,7 @@ describe('EmptyList', () => {
   beforeEach(() => {
     Component = shallow(
       <EmptyList />,
-      {context: {locale: en}},
+      { context: { locale: en } },
     ).find('EmptyList')
       .shallow();
   });
