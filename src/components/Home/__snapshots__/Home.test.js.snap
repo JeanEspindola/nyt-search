@@ -3,6 +3,6 @@
 exports[`Home renders Home without crashing 1`] = `
 <React.Fragment>
   <Connect(connectContext) />
-  <Connect(Component) />
+  <Connect(connectContext) />
 </React.Fragment>
 `;

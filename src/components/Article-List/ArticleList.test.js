@@ -2,6 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { shallowToJson } from 'enzyme-to-json';
 import ArticleList from './ArticleList';
+import en from '../../locales/en.json';
 
 describe('ArticleList', () => {
   let list;
@@ -10,7 +11,11 @@ describe('ArticleList', () => {
   it('renders ArticleList without crashing', () => {
     list = [{ id: 1, headline: { main: 'a' } }, { id: 2, headline: { main: 'a' } }];
 
-    Component = shallow(<ArticleList list={list} />)
+    Component = shallow(
+      <ArticleList list={list} />,
+      { context: { locale: en } },
+    ).first()
+      .shallow()
       .first()
       .shallow()
       .find('ArticleList')
