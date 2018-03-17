@@ -8,10 +8,17 @@
 import React, { Component } from 'react';
 import { Row, Glyphicon } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { compose } from 'recompose';
 import Moment from 'moment';
 import PropTypes from 'prop-types';
 import './ArticleDetail.css';
+import NoArticle from '../Screens/NoArticle';
 import WithLocale from '../HOC/WithLocale';
+import WithCondition from '../HOC/WithCondition';
+
+const isArticleEmpty = props => (
+  props.location.article === null || props.location.article === undefined
+);
 
 class ArticleDetail extends Component {
   constructor(props) {
@@ -24,9 +31,6 @@ class ArticleDetail extends Component {
 
   render() {
     const { article } = this.state;
-    if (article === undefined) {
-      return <p>{this.props.locale.no_details}</p>;
-    }
 
     return (
       <div className="Detail">
@@ -60,5 +64,9 @@ ArticleDetail.propTypes = {
   location: PropTypes.objectOf(PropTypes.any).isRequired,
 };
 
-export default WithLocale(ArticleDetail);
+const WithConditionalRendering = compose(
+  WithLocale,
+  WithCondition(isArticleEmpty, <NoArticle />),
+);
 
+export default WithConditionalRendering(ArticleDetail);

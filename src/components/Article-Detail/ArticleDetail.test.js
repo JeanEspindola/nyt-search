@@ -23,24 +23,12 @@ describe('ArticleDetail', () => {
     Component = shallow(
       <ArticleDetail location={location} />,
       { context: { locale: en } },
-    ).find('ArticleDetail')
+    ).first()
+      .shallow()
+      .find('ArticleDetail')
       .shallow();
     expect(Component.length).toBeTruthy();
     expect(shallowToJson(Component)).toMatchSnapshot();
-  });
-
-  it('renders ArticleDetail with no props', () => {
-    const text = 'No details to show.';
-    location = {
-      article: undefined,
-    };
-
-    Component = shallow(
-      <ArticleDetail location={location} />,
-      { context: { locale: en } },
-    ).find('ArticleDetail')
-      .shallow();
-    expect(Component.find('p').text()).toBe(text);
   });
 });
 
