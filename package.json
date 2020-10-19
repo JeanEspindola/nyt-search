@@ -45,6 +45,11 @@
     "redux-thunk": "^2.2.0",
     "whatwg-fetch": "^3.4.1"
   },
+  "devDependencies": {
+    "node-fetch": "^2.6.1",
+    "kind-of": "^6.0.3",
+    "set-value": "^2.0.1"
+  },
   "scripts": {
     "start-js": "react-scripts start",
     "start": "npm-run-all -p watch-css start-js",
