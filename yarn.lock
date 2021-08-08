@@ -2314,6 +2314,14 @@
   dependencies:
     "@types/istanbul-lib-report" "*"
 
+"@types/jest@^26.0.24":
+  version "26.0.24"
+  resolved "https://hse.jfrog.io/hse/api/npm/npm/@types/jest/-/jest-26.0.24.tgz#943d11976b16739185913a1936e0de0c4a7d595a"
+  integrity sha1-lD0Rl2sWc5GFkToZNuDeDEp9WVo=
+  dependencies:
+    jest-diff "^26.0.0"
+    pretty-format "^26.0.0"
+
 "@types/json-schema@*", "@types/json-schema@^7.0.7", "@types/json-schema@^7.0.8":
   version "7.0.9"
   resolved "https://hse.jfrog.io/hse/api/npm/npm/@types/json-schema/-/json-schema-7.0.9.tgz#97edc9037ea0c38585320b28964dde3b39e4660d"
@@ -2330,6 +2338,11 @@
 "@types/node@*":
   version "9.4.6"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-9.4.6.tgz#d8176d864ee48753d053783e4e463aec86b8d82e"
+
+"@types/node@^16.4.13":
+  version "16.4.13"
+  resolved "https://hse.jfrog.io/hse/api/npm/npm/@types/node/-/node-16.4.13.tgz#7dfd9c14661edc65cccd43a29eb454174642370d"
+  integrity sha1-ff2cFGYe3GXMzUOinrRUF0ZCNw0=
 
 "@types/normalize-package-data@^2.4.0":
   version "2.4.1"
@@ -2352,6 +2365,20 @@
 "@types/q@^1.5.1":
   version "1.5.4"
   resolved "https://registry.yarnpkg.com/@types/q/-/q-1.5.4.tgz#15925414e0ad2cd765bfef58842f7e26a7accb24"
+
+"@types/react-bootstrap@^0.32.26":
+  version "0.32.26"
+  resolved "https://hse.jfrog.io/hse/api/npm/npm/@types/react-bootstrap/-/react-bootstrap-0.32.26.tgz#7309c5ff46684dcdb5e9e0fd21201cdf13ff43b0"
+  integrity sha1-cwnF/0ZoTc216eD9ISAc3xP/Q7A=
+  dependencies:
+    "@types/react" "*"
+
+"@types/react-dom@^17.0.9":
+  version "17.0.9"
+  resolved "https://hse.jfrog.io/hse/api/npm/npm/@types/react-dom/-/react-dom-17.0.9.tgz#441a981da9d7be117042e1a6fd3dac4b30f55add"
+  integrity sha1-RBqYHanXvhFwQuGm/T2sSzD1Wt0=
+  dependencies:
+    "@types/react" "*"
 
 "@types/react-redux@^7.1.16":
   version "7.1.18"
@@ -2377,7 +2404,7 @@
     "@types/prop-types" "*"
     csstype "^3.0.2"
 
-"@types/react@>=16.14.8", "@types/react@>=16.9.11":
+"@types/react@>=16.14.8", "@types/react@>=16.9.11", "@types/react@^17.0.16":
   version "17.0.16"
   resolved "https://hse.jfrog.io/hse/api/npm/npm/@types/react/-/react-17.0.16.tgz#056f40c45645761527baeb7d89d842a6abdf285a"
   integrity sha1-BW9AxFZFdhUnuut9idhCpqvfKFo=
@@ -2456,7 +2483,7 @@
   dependencies:
     "@types/yargs-parser" "*"
 
-"@typescript-eslint/eslint-plugin@^4.5.0":
+"@typescript-eslint/eslint-plugin@^4.29.0", "@typescript-eslint/eslint-plugin@^4.5.0":
   version "4.29.0"
   resolved "https://hse.jfrog.io/hse/api/npm/npm/@typescript-eslint/eslint-plugin/-/eslint-plugin-4.29.0.tgz#b866c9cd193bfaba5e89bade0015629ebeb27996"
   integrity sha1-uGbJzRk7+rpeibreABVinr6yeZY=
@@ -2492,7 +2519,7 @@
     eslint-scope "^5.0.0"
     eslint-utils "^2.0.0"
 
-"@typescript-eslint/parser@^4.5.0":
+"@typescript-eslint/parser@^4.29.0", "@typescript-eslint/parser@^4.5.0":
   version "4.29.0"
   resolved "https://hse.jfrog.io/hse/api/npm/npm/@typescript-eslint/parser/-/parser-4.29.0.tgz#e5367ca3c63636bb5d8e0748fcbab7a4f4a04289"
   integrity sha1-5TZ8o8Y2NrtdjgdI/Lq3pPSgQok=
@@ -7241,7 +7268,7 @@ jest-config@^26.6.3:
     micromatch "^4.0.2"
     pretty-format "^26.6.2"
 
-jest-diff@^26.6.2:
+jest-diff@^26.0.0, jest-diff@^26.6.2:
   version "26.6.2"
   resolved "https://hse.jfrog.io/hse/api/npm/npm/jest-diff/-/jest-diff-26.6.2.tgz#1aa7468b52c3a68d7d5c5fdcdfcd5e49bd164394"
   integrity sha1-GqdGi1LDpo19XF/c381eSb0WQ5Q=
@@ -9927,7 +9954,7 @@ pretty-error@^2.1.1:
     renderkid "^2.0.1"
     utila "~0.4"
 
-pretty-format@^26.6.0, pretty-format@^26.6.2:
+pretty-format@^26.0.0, pretty-format@^26.6.0, pretty-format@^26.6.2:
   version "26.6.2"
   resolved "https://hse.jfrog.io/hse/api/npm/npm/pretty-format/-/pretty-format-26.6.2.tgz#e35c2705f14cb7fe2fe94fa078345b444120fc93"
   integrity sha1-41wnBfFMt/4v6U+geDRbREEg/JM=
@@ -10180,6 +10207,13 @@ react-app-polyfill@^2.0.0:
     raf "^3.4.1"
     regenerator-runtime "^0.13.7"
     whatwg-fetch "^3.4.1"
+
+react-bootstrap-icons@^1.5.0:
+  version "1.5.0"
+  resolved "https://hse.jfrog.io/hse/api/npm/npm/react-bootstrap-icons/-/react-bootstrap-icons-1.5.0.tgz#30ccd09cac69e4037c4cb500cc704d04c4a466a4"
+  integrity sha1-MMzQnKxp5AN8TLUAzHBNBMSkZqQ=
+  dependencies:
+    prop-types "^15.7.2"
 
 react-bootstrap@^1.6.1:
   version "1.6.1"
@@ -12207,6 +12241,11 @@ typedarray-to-buffer@^3.1.5:
 typedarray@^0.0.6:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
+
+typescript@^4.3.5:
+  version "4.3.5"
+  resolved "https://hse.jfrog.io/hse/api/npm/npm/typescript/-/typescript-4.3.5.tgz#4d1c37cc16e893973c45a06886b7113234f119f4"
+  integrity sha1-TRw3zBbok5c8RaBohrcRMjTxGfQ=
 
 ua-parser-js@^0.7.9:
   version "0.7.28"
