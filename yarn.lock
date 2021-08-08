@@ -1786,6 +1786,75 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
+"@formatjs/ecma402-abstract@1.9.6":
+  version "1.9.6"
+  resolved "https://hse.jfrog.io/hse/api/npm/npm/@formatjs/ecma402-abstract/-/ecma402-abstract-1.9.6.tgz#f7301096a585c5823180f76acc4a26e984913e3e"
+  integrity sha1-9zAQlqWFxYIxgPdqzEom6YSRPj4=
+  dependencies:
+    "@formatjs/intl-localematcher" "0.2.19"
+    tslib "^2.1.0"
+
+"@formatjs/fast-memoize@1.1.2":
+  version "1.1.2"
+  resolved "https://hse.jfrog.io/hse/api/npm/npm/@formatjs/fast-memoize/-/fast-memoize-1.1.2.tgz#09c8771484095c07c752b824b142d6c2e2c8264f"
+  integrity sha1-Cch3FIQJXAfHUrgksULWwuLIJk8=
+  dependencies:
+    tslib "^2.1.0"
+
+"@formatjs/icu-messageformat-parser@2.0.9":
+  version "2.0.9"
+  resolved "https://hse.jfrog.io/hse/api/npm/npm/@formatjs/icu-messageformat-parser/-/icu-messageformat-parser-2.0.9.tgz#8b9898d8b8f451c048820a438f1f7283e591cefc"
+  integrity sha1-i5iY2Lj0UcBIggpDjx9yg+WRzvw=
+  dependencies:
+    "@formatjs/ecma402-abstract" "1.9.6"
+    "@formatjs/icu-skeleton-parser" "1.2.10"
+    tslib "^2.1.0"
+
+"@formatjs/icu-skeleton-parser@1.2.10":
+  version "1.2.10"
+  resolved "https://hse.jfrog.io/hse/api/npm/npm/@formatjs/icu-skeleton-parser/-/icu-skeleton-parser-1.2.10.tgz#4febdf9dc96e9b06fa25a0f1c590b3e35e44956e"
+  integrity sha1-T+vfnclumwb6JaDxxZCz415ElW4=
+  dependencies:
+    "@formatjs/ecma402-abstract" "1.9.6"
+    tslib "^2.1.0"
+
+"@formatjs/intl-displaynames@5.2.1":
+  version "5.2.1"
+  resolved "https://hse.jfrog.io/hse/api/npm/npm/@formatjs/intl-displaynames/-/intl-displaynames-5.2.1.tgz#b74131187dec8efb0da383889f0d12b81c19d5ee"
+  integrity sha1-t0ExGH3sjvsNo4OInw0SuBwZ1e4=
+  dependencies:
+    "@formatjs/ecma402-abstract" "1.9.6"
+    "@formatjs/intl-localematcher" "0.2.19"
+    tslib "^2.1.0"
+
+"@formatjs/intl-listformat@6.3.1":
+  version "6.3.1"
+  resolved "https://hse.jfrog.io/hse/api/npm/npm/@formatjs/intl-listformat/-/intl-listformat-6.3.1.tgz#12067912e79f53d363a663f2a00fa4e16b141739"
+  integrity sha1-EgZ5EuefU9NjpmPyoA+k4WsUFzk=
+  dependencies:
+    "@formatjs/ecma402-abstract" "1.9.6"
+    "@formatjs/intl-localematcher" "0.2.19"
+    tslib "^2.1.0"
+
+"@formatjs/intl-localematcher@0.2.19":
+  version "0.2.19"
+  resolved "https://hse.jfrog.io/hse/api/npm/npm/@formatjs/intl-localematcher/-/intl-localematcher-0.2.19.tgz#a4ade690b122cc719b669808063e2a04414622f7"
+  integrity sha1-pK3mkLEizHGbZpgIBj4qBEFGIvc=
+  dependencies:
+    tslib "^2.1.0"
+
+"@formatjs/intl@1.13.5":
+  version "1.13.5"
+  resolved "https://hse.jfrog.io/hse/api/npm/npm/@formatjs/intl/-/intl-1.13.5.tgz#b7f65b35c944e7e0e2e225f0b6f4e951f2332637"
+  integrity sha1-t/ZbNclE5+Di4iXwtvTpUfIzJjc=
+  dependencies:
+    "@formatjs/ecma402-abstract" "1.9.6"
+    "@formatjs/fast-memoize" "1.1.2"
+    "@formatjs/intl-displaynames" "5.2.1"
+    "@formatjs/intl-listformat" "6.3.1"
+    intl-messageformat "9.8.2"
+    tslib "^2.1.0"
+
 "@hapi/address@2.x.x":
   version "2.1.4"
   resolved "https://registry.yarnpkg.com/@hapi/address/-/address-2.1.4.tgz#5d67ed43f3fd41a69d4b9ff7b56e7c0d1d0a81e5"
@@ -2280,7 +2349,12 @@
   dependencies:
     "@types/node" "*"
 
-"@types/hoist-non-react-statics@^3.3.0":
+"@types/history@*":
+  version "4.7.9"
+  resolved "https://hse.jfrog.io/hse/api/npm/npm/@types/history/-/history-4.7.9.tgz#1cfb6d60ef3822c589f18e70f8b12f9a28ce8724"
+  integrity sha1-HPttYO84IsWJ8Y5w+LEvmijOhyQ=
+
+"@types/hoist-non-react-statics@^3.3.0", "@types/hoist-non-react-statics@^3.3.1":
   version "3.3.1"
   resolved "https://hse.jfrog.io/hse/api/npm/npm/@types/hoist-non-react-statics/-/hoist-non-react-statics-3.3.1.tgz#1124aafe5118cb591977aeb1ceaaed1070eb039f"
   integrity sha1-ESSq/lEYy1kZd66xzqrtEHDrA58=
@@ -2390,6 +2464,23 @@
     hoist-non-react-statics "^3.3.0"
     redux "^4.0.0"
 
+"@types/react-router-dom@^5.1.8":
+  version "5.1.8"
+  resolved "https://hse.jfrog.io/hse/api/npm/npm/@types/react-router-dom/-/react-router-dom-5.1.8.tgz#bf3e1c8149b3d62eaa206d58599de82df0241192"
+  integrity sha1-vz4cgUmz1i6qIG1YWZ3oLfAkEZI=
+  dependencies:
+    "@types/history" "*"
+    "@types/react" "*"
+    "@types/react-router" "*"
+
+"@types/react-router@*":
+  version "5.1.16"
+  resolved "https://hse.jfrog.io/hse/api/npm/npm/@types/react-router/-/react-router-5.1.16.tgz#f3ba045fb96634e38b21531c482f9aeb37608a99"
+  integrity sha1-87oEX7lmNOOLIVMcSC+a6zdgipk=
+  dependencies:
+    "@types/history" "*"
+    "@types/react" "*"
+
 "@types/react-transition-group@^4.4.1":
   version "4.4.2"
   resolved "https://hse.jfrog.io/hse/api/npm/npm/@types/react-transition-group/-/react-transition-group-4.4.2.tgz#38890fd9db68bf1f2252b99a942998dc7877c5b3"
@@ -2404,7 +2495,7 @@
     "@types/prop-types" "*"
     csstype "^3.0.2"
 
-"@types/react@>=16.14.8", "@types/react@>=16.9.11", "@types/react@^17.0.16":
+"@types/react@17", "@types/react@>=16.14.8", "@types/react@>=16.9.11", "@types/react@^17.0.16":
   version "17.0.16"
   resolved "https://hse.jfrog.io/hse/api/npm/npm/@types/react/-/react-17.0.16.tgz#056f40c45645761527baeb7d89d842a6abdf285a"
   integrity sha1-BW9AxFZFdhUnuut9idhCpqvfKFo=
@@ -6713,6 +6804,15 @@ internal-slot@^1.0.3:
     has "^1.0.3"
     side-channel "^1.0.4"
 
+intl-messageformat@9.8.2:
+  version "9.8.2"
+  resolved "https://hse.jfrog.io/hse/api/npm/npm/intl-messageformat/-/intl-messageformat-9.8.2.tgz#5528334506f9af660ec3f7ea8f3584bba77af8d4"
+  integrity sha1-VSgzRQb5r2YOw/fqjzWEu6d6+NQ=
+  dependencies:
+    "@formatjs/fast-memoize" "1.1.2"
+    "@formatjs/icu-messageformat-parser" "2.0.9"
+    tslib "^2.1.0"
+
 invariant@^2.2.4:
   version "2.2.4"
   resolved "https://registry.yarnpkg.com/invariant/-/invariant-2.2.4.tgz#610f3c92c9359ce1db616e538008d23ff35158e6"
@@ -10282,6 +10382,20 @@ react-error-overlay@^6.0.9:
   resolved "https://hse.jfrog.io/hse/api/npm/npm/react-error-overlay/-/react-error-overlay-6.0.9.tgz#3c743010c9359608c375ecd6bc76f35d93995b0a"
   integrity sha1-PHQwEMk1lgjDdezWvHbzXZOZWwo=
 
+react-intl@^5.20.7:
+  version "5.20.7"
+  resolved "https://hse.jfrog.io/hse/api/npm/npm/react-intl/-/react-intl-5.20.7.tgz#8102fadb5a52679716c2b59970bc181410d3f6ed"
+  integrity sha1-gQL621pSZ5cWwrWZcLwYFBDT9u0=
+  dependencies:
+    "@formatjs/intl" "1.13.5"
+    "@formatjs/intl-displaynames" "5.2.1"
+    "@formatjs/intl-listformat" "6.3.1"
+    "@types/hoist-non-react-statics" "^3.3.1"
+    "@types/react" "17"
+    hoist-non-react-statics "^3.3.2"
+    intl-messageformat "9.8.2"
+    tslib "^2.1.0"
+
 "react-is@^16.12.0 || ^17.0.0", react-is@^17.0.1, react-is@^17.0.2:
   version "17.0.2"
   resolved "https://hse.jfrog.io/hse/api/npm/npm/react-is/-/react-is-17.0.2.tgz#e691d4a8e9c789365655539ab372762b0efb54f0"
@@ -12156,6 +12270,11 @@ tsconfig-paths@^3.9.0:
 tslib@^1.10.0, tslib@^1.8.1, tslib@^1.9.0:
   version "1.14.1"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.14.1.tgz#cf2d38bdc34a134bcaf1091c41f6619e2f672d00"
+
+tslib@^2.1.0:
+  version "2.3.0"
+  resolved "https://hse.jfrog.io/hse/api/npm/npm/tslib/-/tslib-2.3.0.tgz#803b8cdab3e12ba581a4ca41c8839bbb0dacb09e"
+  integrity sha1-gDuM2rPhK6WBpMpByIObuw2ssJ4=
 
 tsutils@^3.17.1:
   version "3.17.1"

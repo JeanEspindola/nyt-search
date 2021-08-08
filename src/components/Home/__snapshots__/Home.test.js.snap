@@ -1,8 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`Home renders Home without crashing 1`] = `
-<React.Fragment>
-  <Connect(connectContext) />
-  <Connect(connectContext) />
-</React.Fragment>
-`;
