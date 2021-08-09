@@ -1,9 +1,9 @@
 import { Pagination } from 'react-bootstrap';
 import * as Icon from 'react-bootstrap-icons'
-import { loadSearchResults } from '../../actions/articleSearchAction'
+import { loadSearchResults } from '../../redux/actions/articleSearchAction'
 import { useDispatch, useSelector } from 'react-redux'
 import { FormattedMessage } from 'react-intl'
-import { RootStateType } from '../../reducers/rootTypes'
+import { RootStateType } from '../../redux/reducers/rootTypes'
 
 const PageNavigation = () => {
   const { page, query } = useSelector((state: RootStateType) => state.articleList)

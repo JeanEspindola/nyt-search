@@ -5,8 +5,8 @@
 * In this case there is single action, when searching query success.
 *
 * */
-import articleSearchService from '../utils/articleSearchService';
-import { SEARCH_SUBMIT_SUCCESS, LOADING_INDICATOR_SUCCESS } from '../utils/constants';
+import articleSearchService from '../../utils/articleSearchService';
+import { SEARCH_SUBMIT_SUCCESS, LOADING_INDICATOR_SUCCESS } from '../../utils/constants';
 
 export const loadingSubmit = (loading: boolean) => ({
   type: LOADING_INDICATOR_SUCCESS,

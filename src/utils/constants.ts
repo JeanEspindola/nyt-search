@@ -5,7 +5,7 @@
 * API_KEY is the one I generated with my account.
 *
 * */
-export const API_KEY = 'de99f27226cb42b1993b11f717641745';
+export const API_KEY = 'xD015TGRNZtOfYfZq1KApkAJmTE896X2';
 export const URL = 'https://api.nytimes.com/svc/search/v2/articlesearch.json';
 /* Filtering the search for only return articles */
 export const FILTER_QUERY = 'document_type:("article")';

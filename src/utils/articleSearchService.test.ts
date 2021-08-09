@@ -1,12 +1,13 @@
-import articleSearchService from './articleSearchService';
-import articleMockedData from '../mock/articleMockedData.json';
+import articleSearchService from '../utils/articleSearchService';
+import { formattedList, responseList } from '../mock/articleMockedData';
 
 describe('articleSearchService', () => {
-  const list = articleMockedData.responseList;
+  const list = { ...responseList }
 
   it('call getSearchResults - success', async () => {
-    const ret = articleMockedData.responseList;
+    const ret = { ...responseList }
 
+    // @ts-ignore
     fetch.mockResponseSuccess(ret);
 
     const response = await articleSearchService.getSearchResults('search', 1);
@@ -16,6 +17,7 @@ describe('articleSearchService', () => {
   it('call getSearchResults - error', async () => {
     const error = new Error('error on service call');
 
+    // @ts-ignore
     fetch.mockResponseFailure(error);
 
     const response = await articleSearchService.getSearchResults('search', 1);
@@ -24,6 +26,6 @@ describe('articleSearchService', () => {
 
   it('add id to each element of the list', () => {
     expect(articleSearchService.listAddKey(list.response.docs))
-      .toEqual(articleMockedData.formattedList);
+      .toEqual(formattedList);
   });
 });

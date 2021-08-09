@@ -14,7 +14,7 @@ import styles from './ArticleDetail.module.scss';
 import { FormattedMessage } from 'react-intl'
 
 const isArticleEmpty = (article: Article) => (
-  article === null || article === undefined
+  article === null || article === undefined || Object.keys(article).length === 0
 );
 
 interface Article {
@@ -29,7 +29,7 @@ interface Article {
 const ArticleDetail = () => {
   Moment.locale('de');
 
-  const article = useLocation<{ article: Article }>().state?.article ?? '';
+  const article = useLocation<{ article: Article }>().state?.article ?? ''
 
   return (
     <>
