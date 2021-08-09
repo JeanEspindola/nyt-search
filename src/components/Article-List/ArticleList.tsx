@@ -8,7 +8,6 @@ import React from 'react'
 import { ListGroup, ListGroupItem } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import PageNavigation from '../Page-Navigation/PageNavigation';
-import EmptyList from '../Screens/EmptyList';
 import Loading from '../../components/Screens/Loading';
 import { useSelector } from 'react-redux'
 import { RootStateType } from '../../reducers/rootTypes'
@@ -21,7 +20,11 @@ const ArticleList = () => {
   if (loading) {
     component = <Loading />
   } else if (list === null || list === undefined || list.length === 0) {
-    component = <EmptyList />
+    component = (
+      <p>
+        <FormattedMessage id={'noResults'} />
+      </p>
+    )
   } else {
     component = (
       <>

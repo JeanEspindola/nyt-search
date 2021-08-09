@@ -9,7 +9,7 @@ import { Form, FormControl, FormGroup, FormLabel, InputGroup } from 'react-boots
 import * as Icon from 'react-bootstrap-icons'
 import { useDispatch } from 'react-redux'
 import { loadSearchResults } from '../../actions/articleSearchAction'
-import './SearchInput.css';
+import styles from './SearchInput.module.scss';
 import { FormattedMessage, useIntl } from 'react-intl'
 
 const SearchInput = () => {
@@ -35,18 +35,20 @@ const SearchInput = () => {
   }
 
   return (
-    <Form className="Search-Form" onSubmit={onSearch}>
-      <FormGroup>
+    <Form className={styles.container} onSubmit={onSearch}>
+      <FormGroup controlId="formSearch">
         <FormLabel>
           <FormattedMessage id={'typeQuery'} />
         </FormLabel>
-        <InputGroup>
+        <InputGroup className="mb-3">
           <FormControl type="text" placeholder={placeholderText}
             value={query}
             onChange={onChangeQuery}
             name="query"
           />
-          <Icon.Search />
+          <InputGroup.Append>
+            <InputGroup.Text id="basic-addon2"><Icon.Search /></InputGroup.Text>
+          </InputGroup.Append>
         </InputGroup>
       </FormGroup>
     </Form>

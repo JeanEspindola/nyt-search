@@ -6,11 +6,11 @@
 * */
 import { Row } from 'react-bootstrap';
 import { FormattedMessage } from 'react-intl'
-import './Header.css';
+import styles from './Header.module.scss';
 
 const Header = () => (
-  <Row className="Header">
-    <div className="Header__Title">
+  <Row className={styles.header}>
+    <div className={styles.title}>
       <FormattedMessage id="headerTitle"/>
     </div>
   </Row>

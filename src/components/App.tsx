@@ -5,6 +5,7 @@
 * application will be rendered based on the route.
 *
 * */
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { IntlProvider } from 'react-intl';
 import { translationMessages } from '../locales';
 import Header from './Header/Header';

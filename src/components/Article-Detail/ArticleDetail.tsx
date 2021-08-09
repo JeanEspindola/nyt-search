@@ -12,7 +12,6 @@ import { Link } from 'react-router-dom';
 import Moment from 'moment';
 import './ArticleDetail.css';
 import { FormattedMessage } from 'react-intl'
-import NoArticle from '../Screens/NoArticle'
 
 const isArticleEmpty = (article: Article) => (
   article === null || article === undefined
@@ -34,7 +33,11 @@ const ArticleDetail = () => {
 
   return (
     <>
-      {isArticleEmpty(article) ? <NoArticle /> : (
+      {isArticleEmpty(article) ? (
+        <p>
+          <FormattedMessage id={'noDetails'} />
+        </p>
+      ) : (
         <div className="Detail">
           <Row className="Detail__Return">
             <Link to="/" >
