@@ -6,9 +6,9 @@
 * I didn't create others, but could have status for loading and submit field as well.
 *
 * */
-import { LOADING_INDICATOR_SUCCESS, SEARCH_SUBMIT_SUCCESS } from '../utils/constants';
+import { LOADING_INDICATOR_SUCCESS, SEARCH_SUBMIT_SUCCESS } from '../../utils/constants';
 import { initialState } from './initialState';
-import articleSearchService from '../utils/articleSearchService';
+import articleSearchService from '../../utils/articleSearchService';
 import { AnyAction } from 'redux'
 
 function articleList(state = initialState, action: AnyAction) {
