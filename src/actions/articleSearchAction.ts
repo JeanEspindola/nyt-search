@@ -8,19 +8,20 @@
 import articleSearchService from '../utils/articleSearchService';
 import { SEARCH_SUBMIT_SUCCESS, LOADING_INDICATOR_SUCCESS } from '../utils/constants';
 
-export const loadingSubmit = loading => ({
+export const loadingSubmit = (loading: boolean) => ({
   type: LOADING_INDICATOR_SUCCESS,
   loading,
 });
 
-export const searchQuerySuccess = (list, page, query) => ({
+export const searchQuerySuccess = (list: Array<any>, page: number, query: string) => ({
   type: SEARCH_SUBMIT_SUCCESS,
   list,
   page,
   query,
 });
 
-export const loadSearchResults = (query, page) => async (dispatch) => {
+// @ts-ignore
+export const loadSearchResults = (query: string, page: number) => async (dispatch) => {
   dispatch(loadingSubmit(true));
 
   try {

@@ -6,7 +6,9 @@
 * to make next or prev page call.
 *
 * */
-export default {
+import { InitialStateType } from './rootTypes'
+
+export const initialState: InitialStateType = {
   list: [],
   page: 0,
   query: '',

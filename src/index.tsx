@@ -4,9 +4,6 @@
 * Where the application is bootstrapped with router and provider.
 *
 * */
-import 'bootstrap/dist/css/bootstrap.css';
-import 'bootstrap/dist/css/bootstrap-theme.css';
-import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
@@ -17,12 +14,13 @@ import registerServiceWorker from './registerServiceWorker';
 
 const store = configureStore();
 
-ReactDOM.render(
+const Component = (
   <BrowserRouter>
     <Provider store={store}>
       <App />
     </Provider>
-  </BrowserRouter>,
-  document.getElementById('root'),
-);
+  </BrowserRouter>
+)
+
+ReactDOM.render(Component, document.getElementById('root') as HTMLElement);
 registerServiceWorker();
