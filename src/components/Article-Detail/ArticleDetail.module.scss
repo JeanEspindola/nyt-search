@@ -1,25 +1,25 @@
-.Detail {
+.container {
   max-width: 700px;
   margin: 0 auto;
 
-  .Detail__Return {
+  .return {
     margin-top: 15px;
   }
 
-  .Detail__Title {
+  .title {
     margin-top: 20px;
   }
 
-  .Detail__Date {
+  .date {
     margin-top: 10px;
     color: grey;
   }
 
-  .Detail__Text {
+  .text {
     margin-top: 20px;
   }
 
-  .Detail__Link {
+  .link {
     margin-top: 50px;
   }
 }

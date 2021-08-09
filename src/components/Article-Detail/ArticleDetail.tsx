@@ -10,7 +10,7 @@ import { Row } from 'react-bootstrap';
 import * as Icon from 'react-bootstrap-icons'
 import { Link } from 'react-router-dom';
 import Moment from 'moment';
-import './ArticleDetail.css';
+import styles from './ArticleDetail.module.scss';
 import { FormattedMessage } from 'react-intl'
 
 const isArticleEmpty = (article: Article) => (
@@ -38,24 +38,24 @@ const ArticleDetail = () => {
           <FormattedMessage id={'noDetails'} />
         </p>
       ) : (
-        <div className="Detail">
-          <Row className="Detail__Return">
+        <div className={styles.container}>
+          <Row className={styles.return}>
             <Link to="/" >
               <Icon.ChevronLeft />
               <FormattedMessage id={'goToResults'} />
             </Link>
           </Row>
-          <Row className="Detail__Title">
+          <Row className={styles.title}>
             <h3>{article.headline.main}</h3>
           </Row>
-          <Row className="Detail__Date">
+          <Row className={styles.date}>
             {Moment(article.pub_date).format('DD.MM.YYYY')}
           </Row>
-          <Row className="Detail__Text">
+          <Row className={styles.text}>
             {article.snippet}
           </Row>
-          <Row className="Detail__Link">
-            <a target="_blank" href={article.web_url}>
+          <Row className={styles.link}>
+            <a target="_blank" href={article.web_url} rel="noopener noreferrer">
               <FormattedMessage id={'readArticle'} />
             </a>
           </Row>

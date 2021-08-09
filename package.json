@@ -62,14 +62,11 @@
   },
   "scripts": {
     "build": "react-scripts build",
-    "start-js": "react-scripts start",
-    "start": "npm-run-all -p watch-css start-js",
+    "start": "react-scripts start",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "test-coverage": "react-scripts test --env=jsdom --coverage",
-    "lint": "eslint src/;exit 0",
-    "build-css": "node-sass-chokidar src/ -o src/",
-    "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive"
+    "lint": "eslint src/;exit 0"
   },
   "eslintConfig": {
     "extends": "react-app"

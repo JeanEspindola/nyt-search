@@ -7,10 +7,10 @@
 import { Switch, Route } from 'react-router-dom';
 import Home from '../../components/Home/Home';
 import ArticleDetail from '../Article-Detail/ArticleDetail';
-import './MainRoutes.css';
+import styles from './MainRoutes.module.scss';
 
 const MainRoutes = () => (
-  <main className="Main">
+  <main className={styles.container}>
     <Switch>
       <Route exact path="/" component={Home} />
       <Route path="/detail" component={ArticleDetail} />
