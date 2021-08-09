@@ -4,13 +4,13 @@
 * Where the application is bootstrapped with router and provider.
 *
 * */
-import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import { BrowserRouter } from 'react-router-dom';
+import ReactDOM from 'react-dom'
+import { Provider } from 'react-redux'
+import { BrowserRouter } from 'react-router-dom'
 import './index.scss';
-import configureStore from './redux/store/configureStore';
+import configureStore from './redux/store/configureStore'
 import App from './components/App';
-import registerServiceWorker from './registerServiceWorker';
+import registerServiceWorker from './registerServiceWorker'
 
 const store = configureStore();
 
@@ -22,5 +22,5 @@ const Component = (
   </BrowserRouter>
 )
 
-ReactDOM.render(Component, document.getElementById('root') as HTMLElement);
-registerServiceWorker();
+ReactDOM.render(Component, document.getElementById('root') as HTMLElement)
+registerServiceWorker()
