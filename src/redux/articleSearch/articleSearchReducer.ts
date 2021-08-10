@@ -6,10 +6,9 @@
  * I didn't create others, but could have status for loading and submit field as well.
  *
  * */
-import { LOADING_INDICATOR_SUCCESS, SEARCH_SUBMIT_SUCCESS } from '../../utils/constants'
 import { listAddKey } from '../../utils/dataHelper'
 import { AnyAction } from 'redux'
-import { ArticleListStateType } from './articleSearchTypes'
+import { ArticleListStateType, ArticleSearchActionTypes } from './articleSearchTypes'
 
 export const articleListInitialState: ArticleListStateType = {
   list: [],
@@ -20,14 +19,14 @@ export const articleListInitialState: ArticleListStateType = {
 
 function articleList(state = articleListInitialState, action: AnyAction) {
   switch (action.type) {
-    case SEARCH_SUBMIT_SUCCESS:
+    case ArticleSearchActionTypes.SEARCH_SUBMIT_SUCCESS:
       return {
         ...state,
         list: listAddKey(action.list),
         page: action.page,
         query: action.query,
       }
-    case LOADING_INDICATOR_SUCCESS:
+    case ArticleSearchActionTypes.LOADING_INDICATOR_SUCCESS:
       return {
         ...state,
         loading: action.loading,

@@ -8,7 +8,6 @@ import React, { useState } from 'react'
 import { Form, FormControl, FormGroup, FormLabel, InputGroup } from 'react-bootstrap'
 import * as Icon from 'react-bootstrap-icons'
 import { useDispatch } from 'react-redux'
-
 import styles from './SearchInput.module.scss'
 import { FormattedMessage, useIntl } from 'react-intl'
 import { loadSearchResults } from '../../redux/articleSearch/articleSearchAction'

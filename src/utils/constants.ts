@@ -13,6 +13,3 @@ export const BASE_URL = `${URL}?api-key=${API_KEY}`
 export const FILTER_QUERY = 'document_type:("article")'
 /* Restricts the response fields to only values necessary */
 export const RESPONSE_FIELDS = 'snippet,pub_date,headline,web_url'
-
-export const SEARCH_SUBMIT_SUCCESS = 'SEARCH_SUBMIT_SUCCESS'
-export const LOADING_INDICATOR_SUCCESS = 'LOADING_INDICATOR_SUCCESS'

@@ -1,5 +1,5 @@
 import articleList, { articleListInitialState } from './articleSearchReducer'
-import { LOADING_INDICATOR_SUCCESS, SEARCH_SUBMIT_SUCCESS } from '../../utils/constants'
+import { ArticleSearchActionTypes } from './articleSearchTypes'
 
 describe('articleSearchReducer', () => {
   let action
@@ -22,7 +22,7 @@ describe('articleSearchReducer', () => {
       ],
       page: 3,
       query: 'test',
-      type: SEARCH_SUBMIT_SUCCESS,
+      type: ArticleSearchActionTypes.SEARCH_SUBMIT_SUCCESS,
     }
 
     const newState = articleList(articleListInitialState, action)
@@ -34,7 +34,7 @@ describe('articleSearchReducer', () => {
 
   it('Reducer --> LOADING_INDICATOR_SUCCESS', () => {
     action = {
-      type: LOADING_INDICATOR_SUCCESS,
+      type: ArticleSearchActionTypes.LOADING_INDICATOR_SUCCESS,
       loading: true,
     }
 

@@ -1,11 +1,11 @@
-import { LOADING_INDICATOR_SUCCESS, SEARCH_SUBMIT_SUCCESS } from '../../utils/constants'
-import { loadingSubmit, searchQuerySuccess } from './articleSearchAction'
+import { loadingSubmit, searchQuerySuccess } from '../articleSearch/articleSearchAction'
+import { ArticleSearchActionTypes } from './articleSearchTypes'
 
 describe('articleSearchAction', () => {
   it('creates a LOADING_INDICATOR_SUCCESS action', () => {
     // @ts-ignore
     expect(searchQuerySuccess([], 1, 'test')).toEqual({
-      type: SEARCH_SUBMIT_SUCCESS,
+      type: ArticleSearchActionTypes.SEARCH_SUBMIT_SUCCESS,
       list: [],
       page: 1,
       query: 'test',
@@ -14,7 +14,7 @@ describe('articleSearchAction', () => {
 
   it('creates a SEARCH_SUBMIT_SUCCESS action', () => {
     expect(loadingSubmit(false)).toEqual({
-      type: LOADING_INDICATOR_SUCCESS,
+      type: ArticleSearchActionTypes.LOADING_INDICATOR_SUCCESS,
       loading: false,
     })
   })
