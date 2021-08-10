@@ -5,8 +5,8 @@
  * In this case there is single action, when searching query success.
  *
  * */
-import articleSearchService from '../../utils/articleSearchService'
-import { SEARCH_SUBMIT_SUCCESS, LOADING_INDICATOR_SUCCESS } from '../../utils/constants'
+import { LOADING_INDICATOR_SUCCESS, SEARCH_SUBMIT_SUCCESS } from '../../utils/constants'
+import API from '../../api/api'
 
 export const loadingSubmit = (loading: boolean) => ({
   type: LOADING_INDICATOR_SUCCESS,
@@ -25,9 +25,11 @@ export const loadSearchResults = (query: string, page: number) => async (dispatc
   dispatch(loadingSubmit(true))
 
   try {
-    const articleList = await articleSearchService.getSearchResults(query, page)
+    const response = await API.getSearchResults(query, page)
+
     dispatch(loadingSubmit(false))
-    dispatch(searchQuerySuccess(articleList, page, query))
+    // @ts-ignore
+    dispatch(searchQuerySuccess(response, page, query))
   } catch (error) {
     dispatch(loadingSubmit(false))
     throw error

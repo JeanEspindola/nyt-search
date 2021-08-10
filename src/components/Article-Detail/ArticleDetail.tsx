@@ -20,9 +20,9 @@ interface Article {
   headline: {
     main: string
   }
-  pub_date: string
+  pubDate: string
   snippet: string
-  web_url: string
+  webUrl: string
 }
 
 const ArticleDetail = () => {
@@ -47,12 +47,10 @@ const ArticleDetail = () => {
           <Row className={styles.title}>
             <h3>{article.headline.main}</h3>
           </Row>
-          <Row className={styles.date}>
-            {Moment(article.pub_date).format('DD.MM.YYYY')}
-          </Row>
+          <Row className={styles.date}>{Moment(article.pubDate).format('DD.MM.YYYY')}</Row>
           <Row className={styles.text}>{article.snippet}</Row>
           <Row className={styles.link}>
-            <a target="_blank" href={article.web_url} rel="noopener noreferrer">
+            <a target="_blank" href={article.webUrl} rel="noopener noreferrer">
               <FormattedMessage id={'readArticle'} />
             </a>
           </Row>
