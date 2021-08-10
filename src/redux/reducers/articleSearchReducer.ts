@@ -8,7 +8,7 @@
  * */
 import { LOADING_INDICATOR_SUCCESS, SEARCH_SUBMIT_SUCCESS } from '../../utils/constants'
 import { initialState } from './initialState'
-import articleSearchService from '../../utils/articleSearchService'
+import { listAddKey } from '../../utils/dataHelper'
 import { AnyAction } from 'redux'
 
 function articleList(state = initialState, action: AnyAction) {
@@ -16,7 +16,7 @@ function articleList(state = initialState, action: AnyAction) {
     case SEARCH_SUBMIT_SUCCESS:
       return {
         ...state,
-        list: articleSearchService.listAddKey(action.list),
+        list: listAddKey(action.list),
         page: action.page,
         query: action.query,
       }

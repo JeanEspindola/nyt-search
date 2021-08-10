@@ -1,11 +1,11 @@
-import articleSearchService from '../utils/articleSearchService'
 import { formattedList, responseList } from '../mock/articleMockedData'
+import { listAddKey } from './dataHelper'
 
-describe('articleSearchService', () => {
+describe('DataHelper', () => {
   const list = { ...responseList }
 
   it('add id to each element of the list', () => {
     // @ts-ignore
-    expect(articleSearchService.listAddKey(list.response.docs)).toEqual(formattedList)
+    expect(listAddKey(list.response.docs)).toEqual(formattedList)
   })
 })
