@@ -1,10 +1,10 @@
 export interface InitialStateType {
-	list: Array<any>
-	page: number
-	query: string
-	loading: boolean
+  list: Array<never>
+  page: number
+  query: string
+  loading: boolean
 }
 
 export interface RootStateType {
-	articleList: InitialStateType,
+  articleList: InitialStateType
 }

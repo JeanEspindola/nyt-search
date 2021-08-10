@@ -1,10 +1,10 @@
 /*
-* Configure Store:
-*
-* */
-import { applyMiddleware, createStore } from 'redux';
-import thunk from 'redux-thunk';
-import rootReducer from '../reducers/indexReducer';
+ * Configure Store:
+ *
+ * */
+import { applyMiddleware, createStore } from 'redux'
+import thunk from 'redux-thunk'
+import rootReducer from '../reducers/indexReducer'
 import { initialState } from '../reducers/initialState'
 
 export default function configureStore() {
@@ -12,6 +12,6 @@ export default function configureStore() {
     rootReducer,
     // @ts-ignore
     initialState,
-    applyMiddleware(thunk),
-  );
+    applyMiddleware(thunk)
+  )
 }

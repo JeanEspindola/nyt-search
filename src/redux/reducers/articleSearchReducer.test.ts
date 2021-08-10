@@ -1,6 +1,9 @@
 import articleList from '../reducers/articleSearchReducer';
 import { initialState } from './initialState';
-import { LOADING_INDICATOR_SUCCESS, SEARCH_SUBMIT_SUCCESS } from '../../utils/constants';
+import {
+  LOADING_INDICATOR_SUCCESS,
+  SEARCH_SUBMIT_SUCCESS,
+} from '../../utils/constants'
 
 describe('articleSearchReducer', () => {
   let action;

@@ -1,20 +1,20 @@
 /*
-* Article List Presentation Component
-*
-* Renders the list of returned actions, performs page navigation on results.
-*
-* */
+ * Article List Presentation Component
+ *
+ * Renders the list of returned actions, performs page navigation on results.
+ *
+ * */
 import React from 'react'
-import { ListGroup, ListGroupItem } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import PageNavigation from '../Page-Navigation/PageNavigation';
-import Loading from '../../components/Screens/Loading';
+import { ListGroup, ListGroupItem } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
+import PageNavigation from '../Page-Navigation/PageNavigation'
+import Loading from '../../components/Screens/Loading'
 import { useSelector } from 'react-redux'
 import { RootStateType } from '../../redux/reducers/rootTypes'
 import { FormattedMessage } from 'react-intl'
 
 const ArticleList = () => {
-  const {list, loading} = useSelector((state: RootStateType) => state.articleList)
+  const { list, loading } = useSelector((state: RootStateType) => state.articleList)
   let component: React.ReactNode
 
   if (loading) {
@@ -29,29 +29,23 @@ const ArticleList = () => {
     component = (
       <>
         <h4>
-          <FormattedMessage id={'results'}/>
+          <FormattedMessage id={'results'} />
         </h4>
         <ListGroup>
-          {
-            list.map(item => (
-                <ListGroupItem key={item.id}>
-                  <Link to={{pathname: '/detail', state: {article: item}}}>
-                    {item.headline.main}
-                  </Link>
-                </ListGroupItem>
-            ))
-          }
+          {list.map((item) => (
+            // @ts-ignore
+            <ListGroupItem key={item.id}>
+              {/* @ts-ignore*/}
+              <Link to={{ pathname: '/detail', state: { article: item } }}>{item.headline.main}</Link>
+            </ListGroupItem>
+          ))}
         </ListGroup>
-        <PageNavigation/>
+        <PageNavigation />
       </>
     )
   }
 
-  return (
-    <React.Fragment>
-      {component}
-    </React.Fragment>
-  );
+  return <React.Fragment>{component}</React.Fragment>
 }
 
-export default ArticleList;
+export default ArticleList

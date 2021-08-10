@@ -32,7 +32,8 @@ describe('ArticleList', () => {
     const { articleList } = newState
     newState.articleList = {
       ...articleList,
-      list: [ ...formattedList ],
+      // @ts-ignore
+      list: [...formattedList],
     }
 
     const newStore = createDummyStore(newState)

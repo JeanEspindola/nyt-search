@@ -37,4 +37,3 @@ describe('ArticleDetail', () => {
   //   expect(screen.getByText('Next')).toBeInTheDocument()
   // })
 })
-

@@ -1,5 +1,5 @@
-import articleSearchService from '../utils/articleSearchService';
-import { formattedList, responseList } from '../mock/articleMockedData';
+import articleSearchService from '../utils/articleSearchService'
+import { formattedList, responseList } from '../mock/articleMockedData'
 
 describe('articleSearchService', () => {
   const list = { ...responseList }
@@ -8,24 +8,26 @@ describe('articleSearchService', () => {
     const ret = { ...responseList }
 
     // @ts-ignore
-    fetch.mockResponseSuccess(ret);
+    fetch.mockResponseSuccess(ret)
 
-    const response = await articleSearchService.getSearchResults('search', 1);
-    expect(response).toBe(list.response.docs);
-  });
+    const response = await articleSearchService.getSearchResults('search', 1)
+    expect(response).toBe(list.response.docs)
+  })
 
   it('call getSearchResults - error', async () => {
-    const error = new Error('error on service call');
+    const error = new Error('error on service call')
 
     // @ts-ignore
-    fetch.mockResponseFailure(error);
+    fetch.mockResponseFailure(error)
 
-    const response = await articleSearchService.getSearchResults('search', 1);
-    expect(response).toBe(error);
-  });
+    const response = await articleSearchService.getSearchResults('search', 1)
+    expect(response).toBe(error)
+  })
 
   it('add id to each element of the list', () => {
-    expect(articleSearchService.listAddKey(list.response.docs))
-      .toEqual(formattedList);
-  });
-});
+    // @ts-ignore
+    expect(articleSearchService.listAddKey(list.response.docs)).toEqual(
+      formattedList,
+    )
+  })
+})
