@@ -6,7 +6,7 @@
  *
  * */
 import { combineReducers } from 'redux'
-import articleList from './articleSearchReducer'
+import articleList from './articleSearch/articleSearchReducer'
 
 export default combineReducers({
   articleList,

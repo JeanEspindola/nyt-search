@@ -7,11 +7,18 @@
  *
  * */
 import { LOADING_INDICATOR_SUCCESS, SEARCH_SUBMIT_SUCCESS } from '../../utils/constants'
-import { initialState } from './initialState'
 import { listAddKey } from '../../utils/dataHelper'
 import { AnyAction } from 'redux'
+import { ArticleListStateType } from './articleSearchTypes'
 
-function articleList(state = initialState, action: AnyAction) {
+export const articleListInitialState: ArticleListStateType = {
+  list: [],
+  page: 0,
+  query: '',
+  loading: false,
+}
+
+function articleList(state = articleListInitialState, action: AnyAction) {
   switch (action.type) {
     case SEARCH_SUBMIT_SUCCESS:
       return {

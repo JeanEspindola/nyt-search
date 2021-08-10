@@ -6,15 +6,9 @@
  * to make next or prev page call.
  *
  * */
-import { InitialStateType, RootStateType } from './rootTypes'
-
-export const initialState: InitialStateType = {
-  list: [],
-  page: 0,
-  query: '',
-  loading: false,
-}
+import { RootStateType } from '../rootTypes'
+import { articleListInitialState } from '../articleSearch/articleSearchReducer'
 
 export const dummyRootState: RootStateType = {
-  articleList: initialState,
+  articleList: articleListInitialState,
 }

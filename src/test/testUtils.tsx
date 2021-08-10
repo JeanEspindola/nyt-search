@@ -1,4 +1,4 @@
-import { RootStateType } from '../redux/reducers/rootTypes'
+import { RootStateType } from '../redux/rootTypes'
 import { translationMessages } from '../locales'
 import { Store } from 'redux'
 import { Provider } from 'react-redux'

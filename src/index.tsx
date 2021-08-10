@@ -8,11 +8,11 @@ import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 import { BrowserRouter } from 'react-router-dom'
 import './index.scss'
-import configureStore from './redux/store/configureStore'
+import rootStore from './redux/rootStore'
 import App from './components/App'
 import registerServiceWorker from './registerServiceWorker'
 
-const store = configureStore()
+const store = rootStore()
 
 const Component = (
   <BrowserRouter>

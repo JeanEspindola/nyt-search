@@ -1,4 +1,4 @@
-import { RootStateType } from '../redux/reducers/rootTypes'
+import { RootStateType } from '../redux/rootTypes'
 
 export function createDummyStore(state: RootStateType) {
   return {

@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom'
 import PageNavigation from '../Page-Navigation/PageNavigation'
 import Loading from '../../components/Screens/Loading'
 import { useSelector } from 'react-redux'
-import { RootStateType } from '../../redux/reducers/rootTypes'
+import { RootStateType } from '../../redux/rootTypes'
 import { FormattedMessage } from 'react-intl'
 
 const ArticleList = () => {
