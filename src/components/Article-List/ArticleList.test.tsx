@@ -32,7 +32,6 @@ describe('ArticleList', () => {
     const { articleList } = newState
     newState.articleList = {
       ...articleList,
-      // @ts-ignore
       list: [...formattedList],
     }
 

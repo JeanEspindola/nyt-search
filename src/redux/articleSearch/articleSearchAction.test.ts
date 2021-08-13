@@ -1,9 +1,8 @@
-import { loadingSubmit, searchQuerySuccess } from '../articleSearch/articleSearchAction'
+import { loadingSubmit, searchQuerySuccess } from './articleSearchAction'
 import { ArticleSearchActionTypes } from './articleSearchTypes'
 
 describe('articleSearchAction', () => {
   it('creates a LOADING_INDICATOR_SUCCESS action', () => {
-    // @ts-ignore
     expect(searchQuerySuccess([], 1, 'test')).toEqual({
       type: ArticleSearchActionTypes.SEARCH_SUBMIT_SUCCESS,
       list: [],

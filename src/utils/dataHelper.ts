@@ -1,11 +1,8 @@
-export const listAddKey = (array: Array<never>) => {
-  let id = 1
-  for (let it = 0; it < array.length; it += 1) {
-    const item = array[it]
-    // @ts-ignore
-    item.id = id
-    id += 1
-  }
+import { ArticleResponse } from '../redux/articleSearch/articleSearchTypes'
 
-  return array
+export const listAddKey = (articleList: ArticleResponse[]) => {
+  return articleList.map(article => ({
+    ...article,
+    id: articleList.indexOf(article),
+  }))
 }

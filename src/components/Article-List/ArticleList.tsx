@@ -32,10 +32,8 @@ const ArticleList = () => {
           <FormattedMessage id={'results'} />
         </h4>
         <ListGroup>
-          {list.map((item) => (
-            // @ts-ignore
+          {list.map(item => (
             <ListGroupItem key={item.id}>
-              {/* @ts-ignore*/}
               <Link to={{ pathname: '/detail', state: { article: item } }}>{item.headline.main}</Link>
             </ListGroupItem>
           ))}

@@ -1,5 +1,23 @@
+export interface ArticleResponse {
+  webUrl: string
+  pubDate: string
+  snippet: string
+  headline: {
+    contentKicker?: string
+    kicker?: string
+    main: string
+    name?: string
+    printHeadline?: string
+    seo?: string
+  }
+}
+
+export interface EnhancedArticle extends ArticleResponse {
+  id: number
+}
+
 export interface ArticleListStateType {
-  list: Array<never>
+  list: EnhancedArticle[]
   page: number
   query: string
   loading: boolean
