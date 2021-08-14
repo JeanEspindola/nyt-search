@@ -32,7 +32,7 @@ export enum ArticleSearchActionTypes {
 }
 
 export type ArticleSearchSuccessType = {
-  list: Array<never>
+  list: EnhancedArticle[]
   page: number
   query: string
 }
@@ -40,4 +40,22 @@ export type ArticleSearchSuccessType = {
 export type ArticleSearchSubmitType = {
   page: number
   query: string
+}
+
+export type ArticleSearchSubmitAction = {
+  type: ArticleSearchActionTypes.SEARCH_SUBMIT
+  payload: ArticleSearchSubmitType
+}
+
+export type ArticleSearchSubmitInProgressAction = {
+  type: ArticleSearchActionTypes.SEARCH_SUBMIT_INPROGRESS
+}
+
+export type ArticleSearchSubmitFailedAction = {
+  type: ArticleSearchActionTypes.SEARCH_SUBMIT_FAILED
+}
+
+export type ArticleSearchSubmitSuccessAction = {
+  type: ArticleSearchActionTypes.SEARCH_SUBMIT_SUCCESS
+  payload: ArticleSearchSuccessType
 }

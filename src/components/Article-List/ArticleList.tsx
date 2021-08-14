@@ -1,9 +1,3 @@
-/*
- * Article List Presentation Component
- *
- * Renders the list of returned actions, performs page navigation on results.
- *
- * */
 import React from 'react'
 import { ListGroup, ListGroupItem } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
@@ -34,7 +28,9 @@ const ArticleList = () => {
         <ListGroup>
           {list.map(item => (
             <ListGroupItem key={item.id}>
-              <Link to={{ pathname: '/detail', state: { article: item } }}>{item.headline.main}</Link>
+              <Link to={{ pathname: '/detail', state: { article: item } }}>
+                {item.headline.main}
+              </Link>
             </ListGroupItem>
           ))}
         </ListGroup>

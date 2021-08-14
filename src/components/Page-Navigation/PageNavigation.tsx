@@ -3,7 +3,7 @@ import * as Icon from 'react-bootstrap-icons'
 import { useDispatch, useSelector } from 'react-redux'
 import { FormattedMessage } from 'react-intl'
 import { RootStateType } from '../../redux/rootTypes'
-import { loadSearchResults } from '../../redux/articleSearch/articleSearchAction'
+import { articleSearchSubmit } from '../../redux/articleSearch/articleSearchAction'
 
 const PageNavigation = () => {
   const { page, query } = useSelector((state: RootStateType) => state.articleList)
@@ -11,7 +11,7 @@ const PageNavigation = () => {
 
   const getNewValues = (action: string) => {
     const newPage = action === 'next' ? page + 1 : page - 1
-    dispatch(loadSearchResults(query, newPage))
+    dispatch(articleSearchSubmit({ query, page: newPage }))
   }
 
   return (

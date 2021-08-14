@@ -1,16 +1,10 @@
-/*
- * Search Input Presentation Component
- *
- * Displays the search input bar. The search action is in onSubmit action.
- *
- * */
 import React, { useState } from 'react'
 import { Form, FormControl, FormGroup, FormLabel, InputGroup } from 'react-bootstrap'
 import * as Icon from 'react-bootstrap-icons'
 import { useDispatch } from 'react-redux'
 import styles from './SearchInput.module.scss'
 import { FormattedMessage, useIntl } from 'react-intl'
-import { loadSearchResults } from '../../redux/articleSearch/articleSearchAction'
+import { articleSearchSubmit } from '../../redux/articleSearch/articleSearchAction'
 
 const SearchInput = () => {
   const dispatch = useDispatch()
@@ -31,7 +25,7 @@ const SearchInput = () => {
       return
     }
 
-    dispatch(loadSearchResults(query, 0))
+    dispatch(articleSearchSubmit({ query, page: 0 }))
   }
 
   return (
@@ -41,7 +35,13 @@ const SearchInput = () => {
           <FormattedMessage id={'typeQuery'} />
         </FormLabel>
         <InputGroup className="mb-3">
-          <FormControl type="text" placeholder={placeholderText} value={query} onChange={onChangeQuery} name="query" />
+          <FormControl
+            type="text"
+            placeholder={placeholderText}
+            value={query}
+            onChange={onChangeQuery}
+            name="query"
+          />
           <InputGroup.Append>
             <InputGroup.Text id="basic-addon2">
               <Icon.Search />
