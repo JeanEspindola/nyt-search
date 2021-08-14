@@ -26,5 +26,5 @@ export function* getArticleSearchSagas(
 }
 
 export default function* articleSearchWatcher() {
-  yield all([takeLatest(ArticleSearchActionTypes.SEARCH_SUBMIT, getArticleSearchSagas)])
+  yield all([takeLatest(ArticleSearchActionTypes.SEARCH_SUBMIT_INIT, getArticleSearchSagas)])
 }

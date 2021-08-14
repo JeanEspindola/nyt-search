@@ -12,7 +12,7 @@ export const articleListInitialState: ArticleListStateType = {
 export const articleListReducer = (
   state = articleListInitialState,
   action: ArticleSearchActions
-) => {
+): ArticleListStateType => {
   switch (action.type) {
     case ArticleSearchActionTypes.SEARCH_SUBMIT_SUCCESS:
       return {
@@ -24,10 +24,12 @@ export const articleListReducer = (
       }
     case ArticleSearchActionTypes.SEARCH_SUBMIT_INPROGRESS:
       return {
+        ...state,
         loading: true,
       }
     case ArticleSearchActionTypes.SEARCH_SUBMIT_FAILED:
       return {
+        ...state,
         loading: false,
       }
     default:

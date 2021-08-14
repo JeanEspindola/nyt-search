@@ -24,7 +24,7 @@ export interface ArticleListStateType {
 }
 
 export enum ArticleSearchActionTypes {
-  SEARCH_SUBMIT = 'SEARCH_SUBMIT',
+  SEARCH_SUBMIT_INIT = 'SEARCH_SUBMIT_INIT',
   SEARCH_SUBMIT_SUCCESS = 'SEARCH_SUBMIT_SUCCESS',
   SEARCH_SUBMIT_INPROGRESS = 'SEARCH_SUBMIT_INPROGRESS',
   SEARCH_SUBMIT_FAILED = 'SEARCH_SUBMIT_FAILED',
@@ -32,7 +32,7 @@ export enum ArticleSearchActionTypes {
 }
 
 export type ArticleSearchSuccessType = {
-  list: EnhancedArticle[]
+  list: ArticleResponse[]
   page: number
   query: string
 }
@@ -43,7 +43,7 @@ export type ArticleSearchSubmitType = {
 }
 
 export type ArticleSearchSubmitAction = {
-  type: ArticleSearchActionTypes.SEARCH_SUBMIT
+  type: ArticleSearchActionTypes.SEARCH_SUBMIT_INIT
   payload: ArticleSearchSubmitType
 }
 

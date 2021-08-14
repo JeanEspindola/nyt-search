@@ -1,29 +1,51 @@
-import { loadingSubmit, searchQuerySuccess } from './articleSearchAction'
-import { ArticleSearchActionTypes } from './articleSearchTypes'
+import {
+  articleSearchSubmit,
+  articleSearchSubmitFailed,
+  articleSearchSubmitInProgress,
+  articleSearchSubmitSuccess,
+} from './articleSearchAction'
+import {
+  ArticleSearchActionTypes,
+  ArticleSearchSubmitType,
+  ArticleSearchSuccessType,
+} from './articleSearchTypes'
+import { formattedList } from '../../mock/articleMockedData'
 
 describe('articleSearchAction', () => {
-  it('creates a LOADING_INDICATOR_SUCCESS action', () => {
-    expect(searchQuerySuccess([], 1, 'test')).toEqual({
-      type: ArticleSearchActionTypes.SEARCH_SUBMIT_SUCCESS,
-      list: [],
-      page: 1,
+  it('dispatches SEARCH_SUBMIT_INPROGRESS', () => {
+    expect(articleSearchSubmitInProgress()).toEqual({
+      type: ArticleSearchActionTypes.SEARCH_SUBMIT_INPROGRESS,
+    })
+  })
+
+  it('dispatches SEARCH_SUBMIT_FAILED', () => {
+    expect(articleSearchSubmitFailed()).toEqual({
+      type: ArticleSearchActionTypes.SEARCH_SUBMIT_FAILED,
+    })
+  })
+
+  it('dispatches SEARCH_SUBMIT_INIT', () => {
+    const payload: ArticleSearchSubmitType = {
+      page: 0,
       query: 'test',
+    }
+
+    expect(articleSearchSubmit(payload)).toEqual({
+      type: ArticleSearchActionTypes.SEARCH_SUBMIT_INIT,
+      payload,
     })
   })
 
-  it('creates a SEARCH_SUBMIT_SUCCESS action', () => {
-    expect(loadingSubmit(false)).toEqual({
-      type: ArticleSearchActionTypes.LOADING_INDICATOR_SUCCESS,
-      loading: false,
+  it('dispatches SEARCH_SUBMIT_SUCCESS', () => {
+    const payload: ArticleSearchSuccessType = {
+      list: formattedList,
+      page: 0,
+      query: 'test',
+    }
+
+    expect(articleSearchSubmitSuccess(payload)).toEqual({
+      type: ArticleSearchActionTypes.SEARCH_SUBMIT_SUCCESS,
+      payload,
     })
   })
-
-  // it('should handle loadSearchResults action - success', async () => {
-  //   const response = { ...responseList }
-  //
-  //   // @ts-ignore
-  //   fetch.mockResponseSuccess(response);
-  //   await store.dispatch(loadSearchResults('test', 1));
-  //   expect(store.getActions()).toEqual('')
-  // });
 })

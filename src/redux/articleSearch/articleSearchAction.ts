@@ -11,7 +11,7 @@ import {
 export const articleSearchSubmit = (
   payload: ArticleSearchSubmitType
 ): ArticleSearchSubmitAction => ({
-  type: ArticleSearchActionTypes.SEARCH_SUBMIT,
+  type: ArticleSearchActionTypes.SEARCH_SUBMIT_INIT,
   payload,
 })
 

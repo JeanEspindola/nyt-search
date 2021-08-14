@@ -1,45 +1,53 @@
-import articleList, { articleListInitialState } from './articleSearchReducer'
-import { ArticleSearchActionTypes } from './articleSearchTypes'
+import { articleListReducer } from './articleSearchReducer'
+import {
+  ArticleSearchActionTypes,
+  ArticleSearchSubmitFailedAction,
+  ArticleSearchSubmitInProgressAction,
+  ArticleSearchSubmitSuccessAction,
+} from './articleSearchTypes'
+import { dummyArticleSearchState } from '../../mock/dummyArticleData'
+import { formattedList, responseList } from '../../mock/articleMockedData'
 
 describe('articleSearchReducer', () => {
-  let action
-
-  it('Reducer --> SEARCH_SUBMIT_SUCCESS', () => {
-    action = {
-      list: [
-        {
-          article: 'a',
-          snippet: 'a',
-        },
-        {
-          article: 'b',
-          snippet: 'b',
-        },
-        {
-          article: 'c',
-          snippet: 'c',
-        },
-      ],
-      page: 3,
-      query: 'test',
-      type: ArticleSearchActionTypes.SEARCH_SUBMIT_SUCCESS,
+  test('articleSearchSubmitInProgress action', () => {
+    const action: ArticleSearchSubmitInProgressAction = {
+      type: ArticleSearchActionTypes.SEARCH_SUBMIT_INPROGRESS,
     }
 
-    const newState = articleList(articleListInitialState, action)
-
-    expect(newState.list).toEqual(action.list)
-    expect(newState.query).toEqual(action.query)
-    expect(newState.page).toEqual(action.page)
-  })
-
-  it('Reducer --> LOADING_INDICATOR_SUCCESS', () => {
-    action = {
-      type: ArticleSearchActionTypes.LOADING_INDICATOR_SUCCESS,
-      loading: true,
-    }
-
-    const newState = articleList(articleListInitialState, action)
+    const newState = articleListReducer({ ...dummyArticleSearchState }, action)
 
     expect(newState.loading).toBeTruthy()
+  })
+
+  test('articleSearchSubmitFailed action', () => {
+    const action: ArticleSearchSubmitFailedAction = {
+      type: ArticleSearchActionTypes.SEARCH_SUBMIT_FAILED,
+    }
+    const state = { ...dummyArticleSearchState }
+    state.loading = true
+
+    const newState = articleListReducer(state, action)
+
+    expect(newState.loading).toBeFalsy()
+  })
+
+  test('articleSearchSubmitSuccess action', () => {
+    const action: ArticleSearchSubmitSuccessAction = {
+      type: ArticleSearchActionTypes.SEARCH_SUBMIT_SUCCESS,
+      payload: {
+        query: 'test',
+        page: 0,
+        list: responseList,
+      },
+    }
+    const state = { ...dummyArticleSearchState }
+    state.loading = true
+
+    const newState = articleListReducer(state, action)
+
+    expect(newState.loading).toBeFalsy()
+    expect(newState.query).toEqual('test')
+    expect(newState.page).toEqual(0)
+    expect(newState.list).toEqual(formattedList)
   })
 })
