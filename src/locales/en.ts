@@ -3,7 +3,7 @@ export const enTranslationMessages = {
   headerTitle: '"The New York Times" article search application',
   nextPage: 'Next Page',
   noDetails: 'No details to show.',
-  noResults: 'There are no results to display.',
+  noResults: 'There are no results to display',
   previousPage: 'Previous Page',
   readArticle: 'Read the Full Article',
   results: 'Results:',

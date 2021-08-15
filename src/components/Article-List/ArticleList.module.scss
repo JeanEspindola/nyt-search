@@ -1,0 +1,24 @@
+.noResults {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.title {
+  margin-bottom: 16px;
+}
+
+.listItem {
+  margin-top: 8px;
+  font-size: 18px;
+  a {
+    color: gray;
+  }
+}
+
+.listItem:hover {
+  background-color: #007bff;
+
+  a {
+    color: white;
+  }
+}

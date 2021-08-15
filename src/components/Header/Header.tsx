@@ -1,9 +1,3 @@
-/*
- * Header Presentation Component
- *
- * Displays the header top bar.
- *
- * */
 import { Row } from 'react-bootstrap'
 import { FormattedMessage } from 'react-intl'
 import styles from './Header.module.scss'

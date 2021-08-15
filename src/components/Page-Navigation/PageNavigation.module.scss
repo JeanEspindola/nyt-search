@@ -1,0 +1,25 @@
+.container {
+  margin-top: 16px;
+
+  .previousButton {
+    margin-right: 8px;
+  }
+
+  .disabledButton {
+    background-color: white;
+    color: gray;
+    cursor: not-allowed;
+    border: 1px solid gray;
+  }
+
+  .baseButton {
+    width: 140px;
+    border: none;
+    box-sizing: content-box;
+  }
+
+  .activeButton {
+    background: #007bff;
+    color: white;
+  }
+}

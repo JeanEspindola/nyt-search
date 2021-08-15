@@ -1,9 +1,10 @@
-import { Pagination } from 'react-bootstrap'
 import * as Icon from 'react-bootstrap-icons'
 import { useDispatch, useSelector } from 'react-redux'
 import { FormattedMessage } from 'react-intl'
 import { RootStateType } from '../../redux/rootTypes'
 import { articleSearchSubmit } from '../../redux/articleSearch/articleSearchAction'
+import styles from './PageNavigation.module.scss'
+import cx from 'classnames'
 
 const PageNavigation = () => {
   const { page, query } = useSelector((state: RootStateType) => state.articleList)
@@ -14,17 +15,27 @@ const PageNavigation = () => {
     dispatch(articleSearchSubmit({ query, page: newPage }))
   }
 
+  const isFirstPage = page === 0
+
   return (
-    <Pagination>
-      <Pagination.Prev onClick={() => getNewValues('previous')} disabled={page === 0}>
+    <div className={styles.container}>
+      <button
+        className={cx(styles.baseButton, styles.previousButton, {
+          [styles.disabledButton]: isFirstPage,
+          [styles.activeButton]: !isFirstPage,
+        })}
+        onClick={() => getNewValues('previous')}
+        disabled={page === 0}>
         <Icon.ChevronLeft />
         <FormattedMessage id={'previousPage'} />
-      </Pagination.Prev>
-      <Pagination.Next onClick={() => getNewValues('next')}>
+      </button>
+      <button
+        className={cx(styles.baseButton, styles.activeButton)}
+        onClick={() => getNewValues('next')}>
         <FormattedMessage id={'nextPage'} />
         <Icon.ChevronRight />
-      </Pagination.Next>
-    </Pagination>
+      </button>
+    </div>
   )
 }
 
