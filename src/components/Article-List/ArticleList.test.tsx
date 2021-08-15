@@ -1,7 +1,7 @@
 import ArticleList from './ArticleList'
 import { WrappedRender } from '../../test/testUtils'
 import { screen } from '@testing-library/react'
-import { dummyRootState } from '../../redux/reducers/initialState'
+import { dummyRootState } from '../../test/dummyRootState'
 import { createDummyStore } from '../../test/testHelper'
 import { formattedList } from '../../mock/articleMockedData'
 

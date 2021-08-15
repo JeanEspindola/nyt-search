@@ -12,7 +12,7 @@ import {
   articleSearchSubmitSuccess,
 } from './articleSearchAction'
 
-export function* getArticleSearchSagas(
+export function* articleSearchSaga(
   action: ArticleSearchSubmitAction
 ): Generator<Effect, void, EnhancedArticle[]> {
   try {
@@ -26,5 +26,5 @@ export function* getArticleSearchSagas(
 }
 
 export default function* articleSearchWatcher() {
-  yield all([takeLatest(ArticleSearchActionTypes.SEARCH_SUBMIT_INIT, getArticleSearchSagas)])
+  yield all([takeLatest(ArticleSearchActionTypes.SEARCH_SUBMIT_INIT, articleSearchSaga)])
 }
