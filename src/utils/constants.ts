@@ -1,11 +1,4 @@
-/*
- * Constants:
- *
- * All constant values used on actions and reducers.
- * API_KEY is the one I generated with my account.
- *
- * */
-export const API_KEY = 'xD015TGRNZtOfYfZq1KApkAJmTE896X2'
+export const API_KEY = 'aaassdfdfdfdfdfdf12343KApkAJmTE896X2'
 export const URL = 'https://api.nytimes.com/svc/search/v2/articlesearch.json'
 export const BASE_URL = `${URL}?api-key=${API_KEY}`
 
