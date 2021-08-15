@@ -1,6 +1,6 @@
-import Home from './Home'
+import Home from '../Home'
 import { screen } from '@testing-library/react'
-import { WrappedRender } from '../../test/testUtils'
+import { WrappedRender } from '../../../test/testUtils'
 
 describe('Home', () => {
   it('renders Home correctly', () => {

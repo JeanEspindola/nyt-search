@@ -1,12 +1,12 @@
-import { articleListReducer } from './articleSearchReducer'
+import { articleListReducer } from '../articleSearchReducer'
 import {
   ArticleSearchActionTypes,
   ArticleSearchSubmitFailedAction,
   ArticleSearchSubmitInProgressAction,
   ArticleSearchSubmitSuccessAction,
-} from './articleSearchTypes'
-import { dummyArticleSearchState } from '../../mock/dummyArticleData'
-import { formattedList, responseList } from '../../mock/articleMockedData'
+} from '../articleSearchTypes'
+import { dummyArticleSearchState } from '../../../test/mock/dummyArticleData'
+import { formattedList, responseList } from '../../../test/mock/articleMockedData'
 
 describe('articleSearchReducer', () => {
   test('articleSearchSubmitInProgress action', () => {

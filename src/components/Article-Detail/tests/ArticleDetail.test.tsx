@@ -1,5 +1,5 @@
-import ArticleDetail from './ArticleDetail'
-import { WrappedRender } from '../../test/testUtils'
+import ArticleDetail from '../ArticleDetail'
+import { WrappedRender } from '../../../test/testUtils'
 import { screen } from '@testing-library/react'
 
 describe('ArticleDetail', () => {

@@ -1,14 +1,14 @@
 import { AnyAction } from 'redux'
 import { runSaga, SagaIterator } from 'redux-saga'
-import { dummyRootState } from '../../test/dummyRootState'
-import API from '../../api/api'
-import { RootStateType } from '../rootTypes'
-import { mockApi, mockConsoleError, TestDispatchType } from '../../test/testHelper'
-import { ArticleSearchActionTypes, ArticleSearchSubmitAction } from './articleSearchTypes'
-import { articleSearchSaga } from './articleSearchSagas'
-import { responseList } from '../../mock/articleMockedData'
+import { dummyRootState } from '../../../test/dummyRootState'
+import API from '../../../api/api'
+import { RootStateType } from '../../rootTypes'
+import { mockApi, mockConsoleError, TestDispatchType } from '../../../test/testHelper'
+import { ArticleSearchActionTypes, ArticleSearchSubmitAction } from '../articleSearchTypes'
+import { articleSearchSaga } from '../articleSearchSagas'
+import { responseList } from '../../../test/mock/articleMockedData'
 
-jest.mock('../../api/api')
+jest.mock('../../../api/api')
 
 describe('articleSearchSaga', () => {
   const query = 'test'

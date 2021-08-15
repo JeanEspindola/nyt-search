@@ -1,10 +1,10 @@
-import PageNavigation from './PageNavigation'
-import { WrappedRender } from '../../test/testUtils'
+import PageNavigation from '../PageNavigation'
+import { WrappedRender } from '../../../test/testUtils'
 import { screen } from '@testing-library/react'
-import { dummyRootState } from '../../test/dummyRootState'
-import { createDummyStore } from '../../test/testHelper'
+import { dummyRootState } from '../../../test/dummyRootState'
+import { createDummyStore } from '../../../test/testHelper'
 import userEvent from '@testing-library/user-event'
-import { articleSearchSubmit } from '../../redux/articleSearch/articleSearchAction'
+import { articleSearchSubmit } from '../../../redux/articleSearch/articleSearchAction'
 
 describe('PageNavigation', () => {
   it('renders PageNavigation without crashing', () => {

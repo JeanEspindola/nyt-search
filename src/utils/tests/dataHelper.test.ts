@@ -1,5 +1,5 @@
-import { formattedList, responseList } from '../mock/articleMockedData'
-import { listAddKey } from './dataHelper'
+import { formattedList, responseList } from '../../test/mock/articleMockedData'
+import { listAddKey } from '../dataHelper'
 
 describe('DataHelper', () => {
   it('add id to each element of the list', () => {

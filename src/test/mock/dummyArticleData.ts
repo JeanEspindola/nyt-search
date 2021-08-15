@@ -1,4 +1,4 @@
-import { ArticleListStateType } from '../redux/articleSearch/articleSearchTypes'
+import { ArticleListStateType } from '../../redux/articleSearch/articleSearchTypes'
 
 export const dummyArticleSearchState: ArticleListStateType = {
   list: [],

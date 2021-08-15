@@ -3,13 +3,13 @@ import {
   articleSearchSubmitFailed,
   articleSearchSubmitInProgress,
   articleSearchSubmitSuccess,
-} from './articleSearchAction'
+} from '../articleSearchAction'
 import {
   ArticleSearchActionTypes,
   ArticleSearchSubmitType,
   ArticleSearchSuccessType,
-} from './articleSearchTypes'
-import { formattedList } from '../../mock/articleMockedData'
+} from '../articleSearchTypes'
+import { formattedList } from '../../../test/mock/articleMockedData'
 
 describe('articleSearchAction', () => {
   it('dispatches SEARCH_SUBMIT_INPROGRESS', () => {

@@ -1,9 +1,9 @@
-import ArticleList from './ArticleList'
-import { WrappedRender } from '../../test/testUtils'
+import ArticleList from '../ArticleList'
+import { WrappedRender } from '../../../test/testUtils'
 import { screen } from '@testing-library/react'
-import { dummyRootState } from '../../test/dummyRootState'
-import { createDummyStore } from '../../test/testHelper'
-import { formattedList } from '../../mock/articleMockedData'
+import { dummyRootState } from '../../../test/dummyRootState'
+import { createDummyStore } from '../../../test/testHelper'
+import { formattedList } from '../../../test/mock/articleMockedData'
 
 describe('ArticleList', () => {
   it('renders ArticleList with no results', () => {
