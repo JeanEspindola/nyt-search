@@ -6,6 +6,11 @@ const Header = () => (
   <Row className={styles.header}>
     <div className={styles.title}>
       <FormattedMessage id="headerTitle" />
+      <img
+        src="https://developer.nytimes.com/files/poweredby_nytimes_200c.png?v=1583354208354"
+        alt="https://developer.nytimes.com"
+        className={styles.logo}
+      />
     </div>
   </Row>
 )

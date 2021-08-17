@@ -4469,6 +4469,11 @@ cosmiconfig@^7.0.0:
     path-type "^4.0.0"
     yaml "^1.10.0"
 
+country-flag-icons@^1.4.3:
+  version "1.4.3"
+  resolved "https://hse.jfrog.io/hse/api/npm/npm/country-flag-icons/-/country-flag-icons-1.4.3.tgz#c14aac3028f78487828361297221b473ba48c466"
+  integrity sha1-wUqsMCj3hIeCg2EpciG0c7pIxGY=
+
 create-ecdh@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/create-ecdh/-/create-ecdh-4.0.0.tgz#888c723596cdf7612f6498233eebd7a35301737d"
@@ -10294,6 +10299,11 @@ react-bootstrap@^1.6.1:
     react-transition-group "^4.4.1"
     uncontrollable "^7.2.1"
     warning "^4.0.3"
+
+react-country-flag@^2.3.1:
+  version "2.3.1"
+  resolved "https://hse.jfrog.io/hse/api/npm/npm/react-country-flag/-/react-country-flag-2.3.1.tgz#5f9ab50c8fe206f8aaa8d48f8f9c396e7ee67eea"
+  integrity sha1-X5q1DI/iBviqqNSPj5w5bn7mfuo=
 
 react-dev-utils@^11.0.3:
   version "11.0.4"

@@ -1,10 +1,3 @@
-/*
- * Article Detail Presentation Component
- *
- * Renders the detailed list. Using moment library to format dates.
- * Using Link to make sure to call parent route.
- *
- * */
 import { useLocation } from 'react-router'
 import { Row } from 'react-bootstrap'
 import * as Icon from 'react-bootstrap-icons'

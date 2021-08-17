@@ -1,6 +1,6 @@
 export const ptbrTranslationMessages = {
   goToResults: 'Vá para a página de resultados',
-  headerTitle: '"The New York Times" aplicação de busca de artigos',
+  headerTitle: 'Aplicação de Busca de Artigos',
   nextPage: 'Próxima Página',
   noDetails: 'Sem resultados para exibir.',
   noResults: 'Nenhum resultado disponivel.',

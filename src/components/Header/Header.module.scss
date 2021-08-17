@@ -1,6 +1,5 @@
 .header {
   background-color: black;
-  line-height: 50px;
   max-width: 900px;
   margin: auto;
 
@@ -8,5 +7,9 @@
     color: white;
     font-size: 20px;
     margin: auto;
+  }
+
+  .logo {
+    margin-left: 8px;
   }
 }

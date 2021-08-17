@@ -1,6 +1,6 @@
 export const enTranslationMessages = {
   goToResults: 'Go to Results Page',
-  headerTitle: '"The New York Times" article search application',
+  headerTitle: 'Article Search Application',
   nextPage: 'Next Page',
   noDetails: 'No details to show.',
   noResults: 'There are no results to display',
