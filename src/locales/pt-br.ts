@@ -9,4 +9,6 @@ export const ptbrTranslationMessages = {
   results: 'Resultados:',
   searchTerms: 'Busque seus termos aqui.',
   typeQuery: 'Digite o termo de busca aqui:',
+  english: 'Inglês',
+  portuguese: 'Português',
 }

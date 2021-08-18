@@ -9,4 +9,6 @@ export const enTranslationMessages = {
   results: 'Results:',
   searchTerms: 'Search your terms here.',
   typeQuery: 'Type search query term in here:',
+  english: 'English',
+  portuguese: 'Portuguese',
 }

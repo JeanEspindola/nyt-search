@@ -5,14 +5,17 @@ import './index.scss'
 import { configureStore } from './redux/rootStore'
 import App from './components/App'
 import registerServiceWorker from './registerServiceWorker'
+import { Language } from './config/Language'
 
 const store = configureStore()
 
 const Component = (
   <Provider store={store}>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    <Language>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </Language>
   </Provider>
 )
 

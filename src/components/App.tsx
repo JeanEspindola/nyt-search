@@ -1,22 +1,14 @@
-/*
- * App
- *
- * Initialize the UI rendering the Header and the MainRoutes where the rest of
- * application will be rendered based on the route.
- *
- * */
 import 'bootstrap/dist/css/bootstrap.min.css'
-import { IntlProvider } from 'react-intl'
-import { translationMessages } from '../locales'
 import Header from './Header/Header'
 import MainRoutes from './Main-Routes/MainRoutes'
+import { LanguageIntlProvider } from '../config/Language'
 
 const App = () => {
   return (
-    <IntlProvider key="en" locale="en" defaultLocale="en" messages={translationMessages.en}>
+    <LanguageIntlProvider>
       <Header />
       <MainRoutes />
-    </IntlProvider>
+    </LanguageIntlProvider>
   )
 }
 

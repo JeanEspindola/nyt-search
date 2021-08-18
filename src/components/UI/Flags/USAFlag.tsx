@@ -1,7 +1,10 @@
 // @ts-ignore
 import ReactCountryFlag from 'react-country-flag'
+import { useIntl } from 'react-intl'
 
 const USAFlag = () => {
+  const intl = useIntl()
+  const message = intl.formatMessage({ id: 'english' })
   return (
     <ReactCountryFlag
       className="emojiFlag"
@@ -9,8 +12,8 @@ const USAFlag = () => {
       style={{
         fontSize: '2em',
       }}
-      alt="English"
-      title="English"
+      alt={message}
+      title={message}
     />
   )
 }

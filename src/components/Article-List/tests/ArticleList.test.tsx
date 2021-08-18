@@ -9,7 +9,7 @@ describe('ArticleList', () => {
   it('renders ArticleList with no results', () => {
     WrappedRender(<ArticleList />)
 
-    expect(screen.getByText('There are no results to display.')).toBeInTheDocument()
+    expect(screen.getByText('There are no results to display')).toBeInTheDocument()
   })
 
   it('renders ArticleList with loading status', () => {
@@ -24,7 +24,7 @@ describe('ArticleList', () => {
 
     WrappedRender(<ArticleList />, newStore)
 
-    expect(screen.queryByText('There are no results to display.')).not.toBeInTheDocument()
+    expect(screen.queryByText('There are no results to display')).not.toBeInTheDocument()
   })
 
   it('renders ArticleList with results', () => {
@@ -48,8 +48,6 @@ describe('ArticleList', () => {
     expect(screen.getByText(formattedList[3].headline.main)).toBeInTheDocument()
 
     expect(screen.getByText('Previous Page')).toBeInTheDocument()
-    expect(screen.getByText('Previous')).toBeInTheDocument()
     expect(screen.getByText('Next Page')).toBeInTheDocument()
-    expect(screen.getByText('Next')).toBeInTheDocument()
   })
 })

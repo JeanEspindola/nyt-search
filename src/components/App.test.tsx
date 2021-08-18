@@ -6,8 +6,8 @@ describe('App', () => {
   it('renders App without crashing', () => {
     WrappedRender(<App />)
 
-    expect(screen.getByText('"The New York Times" article search application')).toBeInTheDocument()
+    expect(screen.getByText('Article Search Application')).toBeInTheDocument()
     expect(screen.getByText('Type search query term in here:')).toBeInTheDocument()
-    expect(screen.getByText('There are no results to display.')).toBeInTheDocument()
+    expect(screen.getByText('There are no results to display')).toBeInTheDocument()
   })
 })

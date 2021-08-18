@@ -6,6 +6,6 @@ describe('Header', () => {
   it('renders Header correctly', () => {
     WrappedRender(<Header />)
 
-    expect(screen.getByText('"The New York Times" article search application')).toBeInTheDocument()
+    expect(screen.getByText('Article Search Application')).toBeInTheDocument()
   })
 })

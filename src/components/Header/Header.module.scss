@@ -2,11 +2,18 @@
   background-color: black;
   max-width: 900px;
   margin: auto;
+  min-height: 40px;
 
   .title {
     color: white;
     font-size: 20px;
     margin: auto;
+    height: 40px;
+    background-color: black;
+    line-height: 40px;
+    min-width: 840px;
+    display: flex;
+    justify-content: center;
   }
 
   .logo {

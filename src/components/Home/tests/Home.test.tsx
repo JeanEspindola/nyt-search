@@ -8,7 +8,6 @@ describe('Home', () => {
 
     expect(screen.getByText('Type search query term in here:')).toBeInTheDocument()
     expect(screen.getByPlaceholderText('Search your terms here.')).toBeInTheDocument()
-
-    expect(screen.getByText('There are no results to display.')).toBeInTheDocument()
+    expect(screen.getByText('There are no results to display')).toBeInTheDocument()
   })
 })

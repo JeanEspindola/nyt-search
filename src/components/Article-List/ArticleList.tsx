@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import PageNavigation from '../Page-Navigation/PageNavigation'
-import Loading from '../../components/Screens/Loading'
+import Loading from '../UI/Loading/Loading'
 import { useSelector } from 'react-redux'
 import { RootStateType } from '../../redux/rootTypes'
 import { FormattedMessage } from 'react-intl'
