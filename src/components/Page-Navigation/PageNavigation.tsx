@@ -20,7 +20,7 @@ const PageNavigation = () => {
   return (
     <div className={styles.container}>
       <button
-        className={cx(styles.baseButton, styles.previousButton, {
+        className={cx(styles.baseButton, {
           [styles.disabledButton]: isFirstPage,
           [styles.activeButton]: !isFirstPage,
         })}
@@ -30,7 +30,7 @@ const PageNavigation = () => {
         <FormattedMessage id={'previousPage'} />
       </button>
       <button
-        className={cx(styles.baseButton, styles.activeButton)}
+        className={cx(styles.baseButton, styles.activeButton, styles.nextButton)}
         onClick={() => getNewValues('next')}>
         <FormattedMessage id={'nextPage'} />
         <Icon.ChevronRight />
