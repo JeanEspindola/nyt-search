@@ -1,6 +1,5 @@
+import * as Icon from '@material-ui/icons'
 import { useLocation } from 'react-router'
-import { Row } from 'react-bootstrap'
-import * as Icon from 'react-bootstrap-icons'
 import { Link } from 'react-router-dom'
 import Moment from 'moment'
 import styles from './ArticleDetail.module.scss'
@@ -31,22 +30,22 @@ const ArticleDetail = () => {
         </p>
       ) : (
         <div className={styles.container}>
-          <Row className={styles.return}>
+          <div className={styles.return}>
             <Link to="/">
               <Icon.ChevronLeft />
               <FormattedMessage id={'goToResults'} />
             </Link>
-          </Row>
-          <Row className={styles.title}>
+          </div>
+          <div className={styles.title}>
             <h3>{article.headline.main}</h3>
-          </Row>
-          <Row className={styles.date}>{Moment(article.pubDate).format('DD.MM.YYYY')}</Row>
-          <Row className={styles.text}>{article.snippet}</Row>
-          <Row className={styles.link}>
+          </div>
+          <div className={styles.date}>{Moment(article.pubDate).format('DD.MM.YYYY')}</div>
+          <div className={styles.text}>{article.snippet}</div>
+          <div className={styles.link}>
             <a target="_blank" href={article.webUrl} rel="noopener noreferrer">
               <FormattedMessage id={'readArticle'} />
             </a>
-          </Row>
+          </div>
         </div>
       )}
     </>

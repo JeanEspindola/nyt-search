@@ -7,7 +7,7 @@ describe('BRFlag', () => {
     WrappedRender(<BRFlag />)
 
     const flag = screen.getByRole('img', {
-      name: /portuguese/i,
+      name: 'Portuguese',
     })
     expect(flag).toBeInTheDocument()
   })

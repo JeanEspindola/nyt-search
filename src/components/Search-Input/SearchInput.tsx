@@ -1,16 +1,15 @@
-import React, { useState } from 'react'
-import { Form, FormControl, FormGroup, FormLabel, InputGroup } from 'react-bootstrap'
-import * as Icon from 'react-bootstrap-icons'
-import { useDispatch } from 'react-redux'
-import styles from './SearchInput.module.scss'
+import { FormGroup, FormLabel, IconButton, InputBase, Paper } from '@material-ui/core'
+import * as Icon from '@material-ui/icons'
 import { FormattedMessage, useIntl } from 'react-intl'
+import styles from './SearchInput.module.scss'
+import { useState } from 'react'
+import { useDispatch } from 'react-redux'
 import { articleSearchSubmit } from '../../redux/articleSearch/articleSearchAction'
 
 const SearchInput = () => {
   const dispatch = useDispatch()
-  const [query, setQuery] = useState('')
-
   const intl = useIntl()
+  const [query, setQuery] = useState('')
 
   const placeholderText = intl.formatMessage({ id: 'searchTerms' })
 
@@ -24,32 +23,28 @@ const SearchInput = () => {
     if (query === '') {
       return
     }
-
     dispatch(articleSearchSubmit({ query, page: 0 }))
   }
 
   return (
-    <Form className={styles.container} onSubmit={onSearch}>
-      <FormGroup controlId="formSearch">
-        <FormLabel>
-          <FormattedMessage id={'typeQuery'} />
-        </FormLabel>
-        <InputGroup className="mb-3">
-          <FormControl
-            type="text"
-            placeholder={placeholderText}
-            value={query}
-            onChange={onChangeQuery}
-            name="query"
-          />
-          <InputGroup.Append>
-            <InputGroup.Text id="basic-addon2">
-              <Icon.Search />
-            </InputGroup.Text>
-          </InputGroup.Append>
-        </InputGroup>
-      </FormGroup>
-    </Form>
+    <FormGroup className={styles.container}>
+      <FormLabel>
+        <FormattedMessage id={'typeQuery'} />
+      </FormLabel>
+      <Paper component="form" className={styles.paper} onSubmit={onSearch}>
+        <InputBase
+          className={styles.input}
+          placeholder={placeholderText}
+          inputProps={{ 'aria-label': `${placeholderText}` }}
+          onChange={onChangeQuery}
+          value={query}
+          name="query"
+        />
+        <IconButton type="submit" className={styles.iconButton} aria-label="search">
+          <Icon.Search />
+        </IconButton>
+      </Paper>
+    </FormGroup>
   )
 }
 
