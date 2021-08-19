@@ -1,14 +1,14 @@
-import 'bootstrap/dist/css/bootstrap.min.css'
 import Header from './Header/Header'
 import MainRoutes from './Main-Routes/MainRoutes'
-import { LanguageIntlProvider } from '../config/Language'
+import { Container } from '@material-ui/core'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 const App = () => {
   return (
-    <LanguageIntlProvider>
+    <Container>
       <Header />
       <MainRoutes />
-    </LanguageIntlProvider>
+    </Container>
   )
 }
 

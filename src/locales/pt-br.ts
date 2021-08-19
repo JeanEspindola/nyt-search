@@ -7,7 +7,7 @@ export const ptbrTranslationMessages = {
   previousPage: 'Página Anterior',
   readArticle: 'Leia o Artigo Completo',
   results: 'Resultados:',
-  searchTerms: 'Busque seus termos aqui.',
+  searchTerms: 'Busque seus termos aqui',
   typeQuery: 'Digite o termo de busca aqui:',
   english: 'Inglês',
   portuguese: 'Português',

@@ -7,7 +7,7 @@ export const enTranslationMessages = {
   previousPage: 'Previous Page',
   readArticle: 'Read the Full Article',
   results: 'Results:',
-  searchTerms: 'Search your terms here.',
+  searchTerms: 'Search your terms here',
   typeQuery: 'Type search query term in here:',
   english: 'English',
   portuguese: 'Portuguese',
