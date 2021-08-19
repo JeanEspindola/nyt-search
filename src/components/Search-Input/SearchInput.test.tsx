@@ -10,7 +10,7 @@ describe('SearchInput', () => {
   it('renders SearchInput correctly', () => {
     WrappedRender(<SearchInput />)
     expect(screen.getByText('Type search query term in here:')).toBeInTheDocument()
-    expect(screen.getByPlaceholderText('Search your terms here.')).toBeInTheDocument()
+    expect(screen.getByPlaceholderText('Search your terms here')).toBeInTheDocument()
   })
 
   it('do not dispatch if input is empty', () => {
@@ -18,7 +18,7 @@ describe('SearchInput', () => {
     const store = createDummyStore(state)
 
     WrappedRender(<SearchInput />, store)
-    const input = screen.getByPlaceholderText('Search your terms here.')
+    const input = screen.getByPlaceholderText('Search your terms here')
 
     userEvent.type(input, specialChars.enter)
 
@@ -30,7 +30,7 @@ describe('SearchInput', () => {
     const store = createDummyStore(state)
 
     WrappedRender(<SearchInput />, store)
-    const input = screen.getByPlaceholderText('Search your terms here.')
+    const input = screen.getByPlaceholderText('Search your terms here')
 
     userEvent.type(input, `test${specialChars.enter}`)
 

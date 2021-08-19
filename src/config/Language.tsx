@@ -1,9 +1,9 @@
 import React, { createContext, useContext, useState } from 'react'
-import { Dropdown } from 'react-bootstrap'
 import { translationMessages } from '../locales'
 import { IntlProvider } from 'react-intl'
-import BRFlag from '../components/UI/Flags/BRFlag'
+import { FormControl, MenuItem, Select } from '@material-ui/core'
 import USAFlag from '../components/UI/Flags/USAFlag'
+import BRFlag from '../components/UI/Flags/BRFlag'
 import styles from './Language.module.scss'
 
 interface LanguageContextType {
@@ -36,36 +36,21 @@ const LanguageIntlProvider: React.FC<{}> = ({ children }) => {
 const LanguageDropdownSelector = () => {
   const { locale, setLocale } = useContext(LanguageContext) as LanguageContextType
 
-  let component = <USAFlag />
-
-  if (locale === 'pt-br') {
-    component = <BRFlag />
-  }
-
-  const onSetPreferredLanguage = (newLocale: string) => {
-    setLocale(newLocale)
+  const onSetPreferredLanguage = (event: React.BaseSyntheticEvent) => {
+    setLocale(event.target.value)
   }
 
   return (
-    <Dropdown>
-      <Dropdown.Toggle size="sm" className={styles.toggleButton}>
-        {component}
-      </Dropdown.Toggle>
-      <Dropdown.Menu className={styles.menu}>
-        <Dropdown.Item
-          onClick={() => onSetPreferredLanguage('en')}
-          active={locale === 'en'}
-          className={styles.menuItem}>
+    <FormControl variant="standard" className={styles.formControl}>
+      <Select value={locale} onChange={onSetPreferredLanguage}>
+        <MenuItem value="en">
           <USAFlag />
-        </Dropdown.Item>
-        <Dropdown.Item
-          onClick={() => onSetPreferredLanguage('pt-br')}
-          active={locale === 'pt-br'}
-          className={styles.menuItem}>
+        </MenuItem>
+        <MenuItem value="pt-br">
           <BRFlag />
-        </Dropdown.Item>
-      </Dropdown.Menu>
-    </Dropdown>
+        </MenuItem>
+      </Select>
+    </FormControl>
   )
 }
 

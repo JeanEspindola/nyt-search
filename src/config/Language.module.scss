@@ -1,21 +1,13 @@
-.toggleButton {
-  width: 60px;
-  height: 40px;
-  border-radius: unset;
+.formControl {
+  background-color: #3f51b5;
 
-  &:focus {
-    box-shadow: unset !important;
+  div {
+    &::before {
+      border: none;
+    }
+
+    &:hover::before {
+      border-bottom: none !important;
+    }
   }
-}
-
-.menu {
-  min-width: unset;
-  padding: unset;
-  width: 60px;
-}
-
-.menuItem {
-  padding: unset;
-  display: flex;
-  justify-content: center;
 }
