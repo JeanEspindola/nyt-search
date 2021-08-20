@@ -1,9 +1,11 @@
 import ArticleList from '../ArticleList'
 import { WrappedRender } from '../../../test/testUtils'
 import { screen } from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
 import { dummyRootState } from '../../../test/dummyRootState'
 import { createDummyStore } from '../../../test/testHelper'
 import { formattedList } from '../../../test/mock/articleMockedData'
+import { createMemoryHistory } from 'history'
 
 describe('ArticleList', () => {
   it('renders ArticleList with no results', () => {
@@ -49,5 +51,28 @@ describe('ArticleList', () => {
 
     expect(screen.getByText('Previous Page')).toBeInTheDocument()
     expect(screen.getByText('Next Page')).toBeInTheDocument()
+  })
+
+  it('clicks on ArticleList Item and pushes to history', () => {
+    const newState = { ...dummyRootState }
+    const { articleList } = newState
+    newState.articleList = {
+      ...articleList,
+      list: [...formattedList],
+    }
+
+    const history = createMemoryHistory()
+    const pushSpy = jest.spyOn(history, 'push')
+
+    const newStore = createDummyStore(newState)
+
+    WrappedRender(<ArticleList />, newStore, history)
+    const article = formattedList[2]
+
+    const articleItem = screen.getByText(article.headline.main)
+
+    userEvent.click(articleItem)
+
+    expect(pushSpy).toHaveBeenCalledWith('/detail', { article })
   })
 })

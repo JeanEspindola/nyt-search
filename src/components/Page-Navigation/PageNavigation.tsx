@@ -1,10 +1,11 @@
-import * as Icon from 'react-bootstrap-icons'
+import * as Icon from '@material-ui/icons'
 import { useDispatch, useSelector } from 'react-redux'
 import { FormattedMessage } from 'react-intl'
 import { RootStateType } from '../../redux/rootTypes'
 import { articleSearchSubmit } from '../../redux/articleSearch/articleSearchAction'
 import styles from './PageNavigation.module.scss'
 import cx from 'classnames'
+import { Button } from '@material-ui/core'
 
 const PageNavigation = () => {
   const { page, query } = useSelector((state: RootStateType) => state.articleList)
@@ -19,22 +20,26 @@ const PageNavigation = () => {
 
   return (
     <div className={styles.container}>
-      <button
+      <Button
+        onClick={() => getNewValues('previous')}
+        variant="contained"
+        color="primary"
         className={cx(styles.baseButton, {
           [styles.disabledButton]: isFirstPage,
           [styles.activeButton]: !isFirstPage,
         })}
-        onClick={() => getNewValues('previous')}
+        startIcon={<Icon.ChevronLeft />}
         disabled={page === 0}>
-        <Icon.ChevronLeft />
         <FormattedMessage id={'previousPage'} />
-      </button>
-      <button
-        className={cx(styles.baseButton, styles.activeButton, styles.nextButton)}
-        onClick={() => getNewValues('next')}>
+      </Button>
+      <Button
+        onClick={() => getNewValues('next')}
+        variant="contained"
+        color="primary"
+        className={cx(styles.baseButton, styles.nextButton)}
+        endIcon={<Icon.ChevronRight />}>
         <FormattedMessage id={'nextPage'} />
-        <Icon.ChevronRight />
-      </button>
+      </Button>
     </div>
   )
 }

@@ -1,14 +1,18 @@
 .header {
   display: flex;
-  background-color: black;
+  border-top: 1px solid #ebebeb;
+  margin-top: 5px;
+  border-bottom: 4px double #000;
 
   .title {
-    color: white;
     font-size: 20px;
     margin: auto;
+    font-family: Times, serif;
   }
 
-  .logo {
-    margin-left: 8px;
-  }
+}
+
+.logo {
+  position: absolute;
+  top: 8px;
 }

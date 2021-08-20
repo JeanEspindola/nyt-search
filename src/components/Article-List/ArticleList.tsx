@@ -42,7 +42,7 @@ const ArticleList = () => {
               key={item.id}
               className={styles.listItem}
               onClick={() => onClickArticleListItem(item)}>
-              <ListItemText primary={item.headline.main}></ListItemText>
+              <ListItemText primary={item.headline.main} />
             </ListItem>
           ))}
         </List>
