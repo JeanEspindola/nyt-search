@@ -1,15 +1,23 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 import PageNavigation from '../Page-Navigation/PageNavigation'
 import Loading from '../UI/Loading/Loading'
 import { useSelector } from 'react-redux'
 import { RootStateType } from '../../redux/rootTypes'
 import { FormattedMessage } from 'react-intl'
 import styles from './ArticleList.module.scss'
+import { List, ListItem, ListItemText } from '@material-ui/core'
+import { EnhancedArticle } from '../../redux/articleSearch/articleSearchTypes'
 
 const ArticleList = () => {
+  const history = useHistory()
+
   const { list, loading } = useSelector((state: RootStateType) => state.articleList)
   let component: React.ReactNode
+
+  const onClickArticleListItem = (article: EnhancedArticle) => {
+    history.push('/detail', { article })
+  }
 
   if (loading) {
     component = <Loading />
@@ -27,11 +35,17 @@ const ArticleList = () => {
             <FormattedMessage id={'results'} />
           </h4>
         </div>
-        {list.map(item => (
-          <div key={item.id} className={styles.listItem}>
-            <Link to={{ pathname: '/detail', state: { article: item } }}>{item.headline.main}</Link>
-          </div>
-        ))}
+        <List>
+          {list.map(item => (
+            <ListItem
+              button
+              key={item.id}
+              className={styles.listItem}
+              onClick={() => onClickArticleListItem(item)}>
+              <ListItemText primary={item.headline.main}></ListItemText>
+            </ListItem>
+          ))}
+        </List>
         <PageNavigation />
       </>
     )
