@@ -1,11 +1,8 @@
-import { useMemo } from 'react'
-
-interface LogoProps {
-  src: string
-}
-
-const Logo = ({ src }: LogoProps) => {
-  return useMemo(() => <img src={src} alt="https://developer.nytimes.com" />, [src])
-}
+const Logo = () => (
+  <img
+    src="https://developer.nytimes.com/files/poweredby_nytimes_200c.png?v=1583354208354"
+    alt="https://developer.nytimes.com"
+  />
+)
 
 export default Logo

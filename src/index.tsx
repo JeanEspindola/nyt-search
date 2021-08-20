@@ -5,19 +5,19 @@ import './index.scss'
 import { configureStore } from './redux/rootStore'
 import App from './components/App'
 import registerServiceWorker from './registerServiceWorker'
-import { Language, LanguageIntlProvider } from './config/Language'
+import { Container } from '@material-ui/core'
+import Logo from './components/UI/Logo/Logo'
 
 const store = configureStore()
 
 const Component = (
   <Provider store={store}>
-    <Language>
-      <BrowserRouter>
-        <LanguageIntlProvider>
-          <App />
-        </LanguageIntlProvider>
-      </BrowserRouter>
-    </Language>
+    <BrowserRouter>
+      <Container>
+        <App />
+        <Logo />
+      </Container>
+    </BrowserRouter>
   </Provider>
 )
 
