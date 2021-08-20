@@ -1,10 +1,14 @@
 .formControl {
   div {
-    &::before {
+    &::before, &::after {
       border: none;
     }
 
     &:hover::before {
+      border-bottom: none !important;
+    }
+
+    &:hover::after {
       border-bottom: none !important;
     }
   }

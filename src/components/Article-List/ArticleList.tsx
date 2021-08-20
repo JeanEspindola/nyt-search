@@ -31,9 +31,9 @@ const ArticleList = () => {
     component = (
       <>
         <div className={styles.title}>
-          <h4>
+          <h2>
             <FormattedMessage id={'results'} />
-          </h4>
+          </h2>
         </div>
         <List>
           {list.map(item => (

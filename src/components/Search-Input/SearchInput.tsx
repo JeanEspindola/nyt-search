@@ -3,27 +3,31 @@ import * as Icon from '@material-ui/icons'
 import { FormattedMessage, useIntl } from 'react-intl'
 import styles from './SearchInput.module.scss'
 import { useState } from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { articleSearchSubmit } from '../../redux/articleSearch/articleSearchAction'
+import { RootStateType } from '../../redux/rootTypes'
 
 const SearchInput = () => {
   const dispatch = useDispatch()
   const intl = useIntl()
-  const [query, setQuery] = useState('')
+
+  const { query } = useSelector((state: RootStateType) => state.articleList)
+
+  const [stateQuery, setStateQuery] = useState(query)
 
   const placeholderText = intl.formatMessage({ id: 'searchTerms' })
 
   const onChangeQuery = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setQuery(e.target.value)
+    setStateQuery(e.target.value)
   }
 
   const onSearch = (e: React.BaseSyntheticEvent) => {
     e.preventDefault()
 
-    if (query === '') {
+    if (stateQuery === '') {
       return
     }
-    dispatch(articleSearchSubmit({ query, page: 0 }))
+    dispatch(articleSearchSubmit({ query: stateQuery, page: 0 }))
   }
 
   return (
@@ -37,7 +41,7 @@ const SearchInput = () => {
           placeholder={placeholderText}
           inputProps={{ 'aria-label': `${placeholderText}` }}
           onChange={onChangeQuery}
-          value={query}
+          value={stateQuery}
           name="query"
         />
         <IconButton type="submit" className={styles.iconButton} aria-label="search">
