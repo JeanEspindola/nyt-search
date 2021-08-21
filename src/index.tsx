@@ -6,7 +6,6 @@ import { configureStore } from './redux/rootStore'
 import App from './components/App'
 import registerServiceWorker from './registerServiceWorker'
 import { Container } from '@material-ui/core'
-import Logo from './components/UI/Logo/Logo'
 
 const store = configureStore()
 
@@ -15,7 +14,10 @@ const Component = (
     <BrowserRouter>
       <Container>
         <App />
-        <Logo />
+        <img
+          src="https://developer.nytimes.com/files/poweredby_nytimes_200c.png?v=1583354208354"
+          alt="https://developer.nytimes.com"
+        />
       </Container>
     </BrowserRouter>
   </Provider>

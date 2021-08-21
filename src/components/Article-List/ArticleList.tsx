@@ -7,7 +7,7 @@ import { RootStateType } from '../../redux/rootTypes'
 import { FormattedMessage } from 'react-intl'
 import styles from './ArticleList.module.scss'
 import { List, ListItem, ListItemText } from '@material-ui/core'
-import { EnhancedArticle } from '../../redux/articleSearch/articleSearchTypes'
+import { ArticleResponse } from '../../redux/articleSearch/articleSearchTypes'
 
 const ArticleList = () => {
   const history = useHistory()
@@ -15,7 +15,7 @@ const ArticleList = () => {
   const { list, loading } = useSelector((state: RootStateType) => state.articleList)
   let component: React.ReactNode
 
-  const onClickArticleListItem = (article: EnhancedArticle) => {
+  const onClickArticleListItem = (article: ArticleResponse) => {
     history.push('/detail', { article })
   }
 

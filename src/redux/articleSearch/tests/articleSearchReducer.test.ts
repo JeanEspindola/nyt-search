@@ -6,7 +6,7 @@ import {
   ArticleSearchSubmitSuccessAction,
 } from '../articleSearchTypes'
 import { dummyArticleSearchState } from '../../../test/mock/dummyArticleData'
-import { formattedList, responseList } from '../../../test/mock/articleMockedData'
+import { formattedList } from '../../../test/mock/articleMockedData'
 
 describe('articleSearchReducer', () => {
   test('articleSearchSubmitInProgress action', () => {
@@ -37,7 +37,7 @@ describe('articleSearchReducer', () => {
       payload: {
         query: 'test',
         page: 0,
-        list: responseList,
+        list: formattedList,
       },
     }
     const state = { ...dummyArticleSearchState }

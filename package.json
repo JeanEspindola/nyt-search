@@ -72,6 +72,7 @@
     "eslint-plugin-prettier": "^3.4.0",
     "jest-junit": "^12.2.0",
     "kind-of": "^6.0.3",
+    "msw": "^0.34.0",
     "node-fetch": "^2.6.1",
     "prettier": "^2.3.2",
     "set-value": "^2.0.1",

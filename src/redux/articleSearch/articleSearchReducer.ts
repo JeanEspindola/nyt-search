@@ -1,4 +1,3 @@
-import { listAddKey } from '../../utils/dataHelper'
 import { ArticleListStateType, ArticleSearchActionTypes } from './articleSearchTypes'
 import { ArticleSearchActions } from './articleSearchAction'
 
@@ -17,7 +16,7 @@ export const articleListReducer = (
     case ArticleSearchActionTypes.SEARCH_SUBMIT_SUCCESS:
       return {
         ...state,
-        list: listAddKey(action.payload.list),
+        list: action.payload.list,
         page: action.payload.page,
         query: action.payload.query,
         loading: false,

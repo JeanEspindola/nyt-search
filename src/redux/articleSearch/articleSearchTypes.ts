@@ -1,4 +1,5 @@
 export interface ArticleResponse {
+  id: number
   webUrl: string
   pubDate: string
   snippet: string
@@ -12,12 +13,8 @@ export interface ArticleResponse {
   }
 }
 
-export interface EnhancedArticle extends ArticleResponse {
-  id: number
-}
-
 export interface ArticleListStateType {
-  list: EnhancedArticle[]
+  list: ArticleResponse[]
   page: number
   query: string
   loading: boolean
@@ -28,7 +25,6 @@ export enum ArticleSearchActionTypes {
   SEARCH_SUBMIT_SUCCESS = 'SEARCH_SUBMIT_SUCCESS',
   SEARCH_SUBMIT_INPROGRESS = 'SEARCH_SUBMIT_INPROGRESS',
   SEARCH_SUBMIT_FAILED = 'SEARCH_SUBMIT_FAILED',
-  LOADING_INDICATOR_SUCCESS = 'LOADING_INDICATOR_SUCCESS',
 }
 
 export type ArticleSearchSuccessType = {

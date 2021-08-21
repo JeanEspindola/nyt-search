@@ -2,9 +2,9 @@ import { all, call, put, takeLatest } from '@redux-saga/core/effects'
 import API from '../../api/api'
 import { Effect } from '@redux-saga/types'
 import {
+  ArticleResponse,
   ArticleSearchActionTypes,
   ArticleSearchSubmitAction,
-  EnhancedArticle,
 } from './articleSearchTypes'
 import {
   articleSearchSubmitFailed,
@@ -14,7 +14,7 @@ import {
 
 export function* articleSearchSaga(
   action: ArticleSearchSubmitAction
-): Generator<Effect, void, EnhancedArticle[]> {
+): Generator<Effect, void, ArticleResponse[]> {
   try {
     const { query, page } = action.payload
     yield put(articleSearchSubmitInProgress())
