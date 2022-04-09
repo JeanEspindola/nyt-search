@@ -39,7 +39,7 @@
     "eslint-plugin-react": "^7.5.1",
     "humps": "^2.0.1",
     "jsdom": "^16.4.0",
-    "moment": "^2.20.1",
+    "moment": "^2.29.2",
     "node-sass": "^7.0.0",
     "react": "^17.0.2",
     "react-country-flag": "^2.3.1",
